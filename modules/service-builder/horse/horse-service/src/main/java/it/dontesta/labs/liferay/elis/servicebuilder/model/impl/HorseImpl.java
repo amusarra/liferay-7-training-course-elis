@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl;
+package it.dontesta.labs.liferay.elis.servicebuilder.model.impl;
 
 import aQute.bnd.annotation.ProviderType;
 
@@ -20,7 +20,7 @@ import aQute.bnd.annotation.ProviderType;
  * The extended model implementation for the Horse service. Represents a row in the &quot;LRBOHORSE_Horse&quot; database table, with each column mapped to a property of this class.
  *
  * <p>
- * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse} interface.
+ * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.dontesta.labs.liferay.elis.servicebuilder.model.Horse} interface.
  * </p>
  *
  * @author Brian Wing Shun Chan
@@ -30,7 +30,7 @@ public class HorseImpl extends HorseBaseImpl {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. All methods that expect a horse model instance should use the {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse} interface instead.
+	 * Never reference this class directly. All methods that expect a horse model instance should use the {@link it.dontesta.labs.liferay.elis.servicebuilder.model.Horse} interface instead.
 	 */
 	public HorseImpl() {
 	}

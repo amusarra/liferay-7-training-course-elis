@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lrbo16.webservice.crm.service;
+package it.dontesta.labs.liferay.elis.webservice.crm.service;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -23,10 +23,10 @@ import com.predic8.wsdl.crm.crmservice._1.CRMServicePT;
 
 import aQute.bnd.annotation.ProviderType;
 import aQute.bnd.annotation.metatype.Configurable;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.api.CRMService;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.exception.CRMServiceException;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.model.Customer;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.service.configuration.CRMSOAPServiceConfiguration;
+import it.dontesta.labs.liferay.elis.webservice.crm.api.CRMService;
+import it.dontesta.labs.liferay.elis.webservice.crm.exception.CRMServiceException;
+import it.dontesta.labs.liferay.elis.webservice.crm.model.Customer;
+import it.dontesta.labs.liferay.elis.webservice.crm.service.configuration.CRMSOAPServiceConfiguration;
 
 /**
  * 
@@ -34,7 +34,7 @@ import it.dontesta.labs.liferay.lrbo16.webservice.crm.service.configuration.CRMS
  *
  */
 @Component(
-		configurationPid="it.dontesta.labs.liferay.lrbo16.webservice.crm.service.configuration.CRMSOAPServiceConfiguration",
+		configurationPid="it.dontesta.labs.liferay.elis.webservice.crm.service.configuration.CRMSOAPServiceConfiguration",
 		immediate = true,
 		property = {},
 		service = CRMService.class
@@ -92,15 +92,15 @@ public class CRMSOAPService implements CRMService {
 				Customer customer = new Customer();
 				customer.setId(customerType.getId());
 				
-				it.dontesta.labs.liferay.lrbo16.webservice.crm.model.PersonType person = 
-						new it.dontesta.labs.liferay.lrbo16.webservice.crm.model.PersonType();
+				it.dontesta.labs.liferay.elis.webservice.crm.model.PersonType person = 
+						new it.dontesta.labs.liferay.elis.webservice.crm.model.PersonType();
 				person.setFirstName(customerType.getPerson().getFirstName());
 				person.setLastName(customerType.getPerson().getLastName());
 				person.setAge(customerType.getPerson().getAge().intValue());
 				person.setId(customerType.getId());
 
-				it.dontesta.labs.liferay.lrbo16.webservice.crm.model.AddressType addressType = 
-						new it.dontesta.labs.liferay.lrbo16.webservice.crm.model.AddressType();
+				it.dontesta.labs.liferay.elis.webservice.crm.model.AddressType addressType = 
+						new it.dontesta.labs.liferay.elis.webservice.crm.model.AddressType();
 				addressType.setCity(customerType.getPerson().getAddress().getCity());
 				addressType.setCountry(customerType.getPerson().getAddress().getCountry());
 				addressType.setStreet(customerType.getPerson().getAddress().getStreet());
@@ -108,8 +108,8 @@ public class CRMSOAPService implements CRMService {
 				person.setAddress(addressType);
 				customer.setPerson(person);
 				
-				it.dontesta.labs.liferay.lrbo16.webservice.crm.model.CompanyAddressType companyAddressType = 
-						new it.dontesta.labs.liferay.lrbo16.webservice.crm.model.CompanyAddressType();
+				it.dontesta.labs.liferay.elis.webservice.crm.model.CompanyAddressType companyAddressType = 
+						new it.dontesta.labs.liferay.elis.webservice.crm.model.CompanyAddressType();
 				companyAddressType.setCompanyName(customerType.getAddress().getCompanyName());
 				customer.setCompanyAddressType(companyAddressType);
 				

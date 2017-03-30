@@ -1,2 +1,7 @@
-Bundle-SymbolicName: crmservices-commands
+Bundle-Name: CRM Services Command Client
+Bundle-SymbolicName: it.dontesta.labs.liferay.elis.webservice.crm.command.client
 Bundle-Version: 1.0.0
+Bundle-Category: Web Services Client
+Bundle-Copyright: Antonio Musarra's Blog
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-DocURL: https://www.dontesta.it

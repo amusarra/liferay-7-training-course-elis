@@ -1,4 +1,10 @@
-Bundle-SymbolicName: horse-service
-Bundle-Version: 1.0.0
+Bundle-Name: Horse Service by Service Builder
+Bundle-SymbolicName: it.dontesta.labs.liferay.elis.servicebuilder.horse.service
+Bundle-Version: 1.0.1
+Bundle-Category: Liferay Service Builder Framework
+Bundle-Copyright: Antonio Musarra's Blog
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-DocURL: https://www.dontesta.it
 Liferay-Require-SchemaVersion: 1.0.0
 Liferay-Service: true
+Liferay-Spring-Context: META-INF/spring

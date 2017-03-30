@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lrbo16.webservice.crm.command;
+package it.dontesta.labs.liferay.elis.webservice.crm.command;
 
 
 import java.util.UUID;
@@ -13,11 +13,11 @@ import org.osgi.service.component.annotations.ReferencePolicy;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.api.CRMService;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.exception.CRMServiceException;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.model.CompanyAddressType;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.model.Customer;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.model.PersonType;
+import it.dontesta.labs.liferay.elis.webservice.crm.api.CRMService;
+import it.dontesta.labs.liferay.elis.webservice.crm.exception.CRMServiceException;
+import it.dontesta.labs.liferay.elis.webservice.crm.model.CompanyAddressType;
+import it.dontesta.labs.liferay.elis.webservice.crm.model.Customer;
+import it.dontesta.labs.liferay.elis.webservice.crm.model.PersonType;
 
 @Component(
 	immediate = true,
@@ -25,7 +25,7 @@ import it.dontesta.labs.liferay.lrbo16.webservice.crm.model.PersonType;
 		"osgi.command.function=createDefaultCustomer",
 		"osgi.command.function=getCustomer",
 		"osgi.command.function=getCustomers",
-		"osgi.command.scope=lfboug"
+		"osgi.command.scope=elis"
 	},
 	service = Object.class
 )

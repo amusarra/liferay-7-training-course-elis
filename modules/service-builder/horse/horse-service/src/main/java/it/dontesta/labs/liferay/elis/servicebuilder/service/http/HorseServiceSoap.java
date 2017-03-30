@@ -12,12 +12,14 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service.http;
+package it.dontesta.labs.liferay.elis.servicebuilder.service.http;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseServiceUtil;
+
+import it.dontesta.labs.liferay.elis.servicebuilder.service.HorseServiceUtil;
 
 import java.rmi.RemoteException;
 
@@ -31,10 +33,10 @@ import java.rmi.RemoteException;
  * <p>
  * ServiceBuilder follows certain rules in translating the methods. For example,
  * if the method in the service utility returns a {@link java.util.List}, that
- * is translated to an array of {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap}.
+ * is translated to an array of {@link it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap}.
  * If the method in the service utility returns a
- * {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse}, that is translated to a
- * {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap}. Methods that SOAP cannot
+ * {@link it.dontesta.labs.liferay.elis.servicebuilder.model.Horse}, that is translated to a
+ * {@link it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap}. Methods that SOAP cannot
  * safely wire are skipped.
  * </p>
  *
@@ -57,19 +59,19 @@ import java.rmi.RemoteException;
  *
  * @author Brian Wing Shun Chan
  * @see HorseServiceHttp
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap
  * @see HorseServiceUtil
  * @generated
  */
 @ProviderType
 public class HorseServiceSoap {
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap[] getHorses()
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap[] getHorses()
 		throws RemoteException {
 		try {
-			java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> returnValue =
+			java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> returnValue =
 				HorseServiceUtil.getHorses();
 
-			return it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
+			return it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
 		}
 		catch (Exception e) {
 			_log.error(e, e);
@@ -78,13 +80,13 @@ public class HorseServiceSoap {
 		}
 	}
 
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap[] getHorsesByName(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap[] getHorsesByName(
 		java.lang.String name) throws RemoteException {
 		try {
-			java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> returnValue =
+			java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> returnValue =
 				HorseServiceUtil.getHorsesByName(name);
 
-			return it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
+			return it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
 		}
 		catch (Exception e) {
 			_log.error(e, e);
@@ -103,14 +105,14 @@ public class HorseServiceSoap {
 	* @param age
 	* @return
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap addHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) throws RemoteException {
 		try {
-			it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse returnValue =
+			it.dontesta.labs.liferay.elis.servicebuilder.model.Horse returnValue =
 				HorseServiceUtil.addHorse(name, kind, mantle, gender, age);
 
-			return it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap.toSoapModel(returnValue);
+			return it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap.toSoapModel(returnValue);
 		}
 		catch (Exception e) {
 			_log.error(e, e);
@@ -119,13 +121,28 @@ public class HorseServiceSoap {
 		}
 	}
 
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap[] getCurrentHorseByeAge(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap[] getCurrentHorseByeAge(
 		int age) throws RemoteException {
 		try {
-			java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> returnValue =
+			java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> returnValue =
 				HorseServiceUtil.getCurrentHorseByeAge(age);
 
-			return it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
+			return it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap[] getHorsesByKind(
+		java.lang.String kind) throws RemoteException {
+		try {
+			java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> returnValue =
+				HorseServiceUtil.getHorsesByKind(kind);
+
+			return it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap.toSoapModels(returnValue);
 		}
 		catch (Exception e) {
 			_log.error(e, e);

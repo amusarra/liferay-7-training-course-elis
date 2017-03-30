@@ -1,6 +1,6 @@
-package it.dontesta.labs.liferay.lrbo16.service.horse.impl;
+package it.dontesta.labs.liferay.elis.service.horse.impl;
 
-import it.dontesta.labs.liferay.lrbo16.service.horse.HorseService;
+import it.dontesta.labs.liferay.elis.service.horse.HorseService;
 
 public class HorseServiceImpl implements HorseService {
 

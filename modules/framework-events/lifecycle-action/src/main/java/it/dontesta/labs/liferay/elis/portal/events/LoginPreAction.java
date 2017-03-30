@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lrbo16.portal.events;
+package it.dontesta.labs.liferay.elis.portal.events;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;

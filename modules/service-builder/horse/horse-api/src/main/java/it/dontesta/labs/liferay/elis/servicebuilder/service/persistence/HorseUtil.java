@@ -12,20 +12,24 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service.persistence;
+package it.dontesta.labs.liferay.elis.servicebuilder.service.persistence;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.osgi.util.ServiceTrackerFactory;
+
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.util.OrderByComparator;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
+
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
+
 import org.osgi.util.tracker.ServiceTracker;
 
 import java.util.List;
 
 /**
- * The persistence utility for the horse service. This utility wraps {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.persistence.impl.HorsePersistenceImpl} and provides direct access to the database for CRUD operations. This utility should only be used by the service layer, as it must operate within a transaction. Never access this utility in a JSP, controller, model, or other front-end class.
+ * The persistence utility for the horse service. This utility wraps {@link it.dontesta.labs.liferay.elis.servicebuilder.service.persistence.impl.HorsePersistenceImpl} and provides direct access to the database for CRUD operations. This utility should only be used by the service layer, as it must operate within a transaction. Never access this utility in a JSP, controller, model, or other front-end class.
  *
  * <p>
  * Caching information and settings can be found in <code>portal.properties</code>
@@ -33,7 +37,7 @@ import java.util.List;
  *
  * @author Brian Wing Shun Chan
  * @see HorsePersistence
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.persistence.impl.HorsePersistenceImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.persistence.impl.HorsePersistenceImpl
  * @generated
  */
 @ProviderType
@@ -181,7 +185,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByUuid_First(java.lang.String uuid,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().findByUuid_First(uuid, orderByComparator);
 	}
 
@@ -207,7 +211,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByUuid_Last(java.lang.String uuid,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().findByUuid_Last(uuid, orderByComparator);
 	}
 
@@ -234,7 +238,7 @@ public class HorseUtil {
 	*/
 	public static Horse[] findByUuid_PrevAndNext(long horseId,
 		java.lang.String uuid, OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByUuid_PrevAndNext(horseId, uuid, orderByComparator);
 	}
@@ -267,7 +271,7 @@ public class HorseUtil {
 	* @throws NoSuchHorseException if a matching horse could not be found
 	*/
 	public static Horse findByUUID_G(java.lang.String uuid, long groupId)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().findByUUID_G(uuid, groupId);
 	}
 
@@ -303,7 +307,7 @@ public class HorseUtil {
 	* @return the horse that was removed
 	*/
 	public static Horse removeByUUID_G(java.lang.String uuid, long groupId)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().removeByUUID_G(uuid, groupId);
 	}
 
@@ -402,7 +406,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByUuid_C_First(java.lang.String uuid,
 		long companyId, OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByUuid_C_First(uuid, companyId, orderByComparator);
 	}
@@ -432,7 +436,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByUuid_C_Last(java.lang.String uuid,
 		long companyId, OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByUuid_C_Last(uuid, companyId, orderByComparator);
 	}
@@ -464,7 +468,7 @@ public class HorseUtil {
 	public static Horse[] findByUuid_C_PrevAndNext(long horseId,
 		java.lang.String uuid, long companyId,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByUuid_C_PrevAndNext(horseId, uuid, companyId,
 			orderByComparator);
@@ -568,7 +572,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByName_First(java.lang.String name,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().findByName_First(name, orderByComparator);
 	}
 
@@ -594,7 +598,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByName_Last(java.lang.String name,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().findByName_Last(name, orderByComparator);
 	}
 
@@ -621,7 +625,7 @@ public class HorseUtil {
 	*/
 	public static Horse[] findByName_PrevAndNext(long horseId,
 		java.lang.String name, OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByName_PrevAndNext(horseId, name, orderByComparator);
 	}
@@ -724,7 +728,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByAgeAndCurrentCreateDate_First(int age,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByAgeAndCurrentCreateDate_First(age, orderByComparator);
 	}
@@ -752,7 +756,7 @@ public class HorseUtil {
 	*/
 	public static Horse findByAgeAndCurrentCreateDate_Last(int age,
 		OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByAgeAndCurrentCreateDate_Last(age, orderByComparator);
 	}
@@ -781,7 +785,7 @@ public class HorseUtil {
 	*/
 	public static Horse[] findByAgeAndCurrentCreateDate_PrevAndNext(
 		long horseId, int age, OrderByComparator<Horse> orderByComparator)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence()
 				   .findByAgeAndCurrentCreateDate_PrevAndNext(horseId, age,
 			orderByComparator);
@@ -890,6 +894,160 @@ public class HorseUtil {
 	}
 
 	/**
+	* Returns all the horses where kind = &#63;.
+	*
+	* @param kind the kind
+	* @return the matching horses
+	*/
+	public static List<Horse> findByKind(java.lang.String kind) {
+		return getPersistence().findByKind(kind);
+	}
+
+	/**
+	* Returns a range of all the horses where kind = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param kind the kind
+	* @param start the lower bound of the range of horses
+	* @param end the upper bound of the range of horses (not inclusive)
+	* @return the range of matching horses
+	*/
+	public static List<Horse> findByKind(java.lang.String kind, int start,
+		int end) {
+		return getPersistence().findByKind(kind, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the horses where kind = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param kind the kind
+	* @param start the lower bound of the range of horses
+	* @param end the upper bound of the range of horses (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching horses
+	*/
+	public static List<Horse> findByKind(java.lang.String kind, int start,
+		int end, OrderByComparator<Horse> orderByComparator) {
+		return getPersistence().findByKind(kind, start, end, orderByComparator);
+	}
+
+	/**
+	* Returns an ordered range of all the horses where kind = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param kind the kind
+	* @param start the lower bound of the range of horses
+	* @param end the upper bound of the range of horses (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @param retrieveFromCache whether to retrieve from the finder cache
+	* @return the ordered range of matching horses
+	*/
+	public static List<Horse> findByKind(java.lang.String kind, int start,
+		int end, OrderByComparator<Horse> orderByComparator,
+		boolean retrieveFromCache) {
+		return getPersistence()
+				   .findByKind(kind, start, end, orderByComparator,
+			retrieveFromCache);
+	}
+
+	/**
+	* Returns the first horse in the ordered set where kind = &#63;.
+	*
+	* @param kind the kind
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching horse
+	* @throws NoSuchHorseException if a matching horse could not be found
+	*/
+	public static Horse findByKind_First(java.lang.String kind,
+		OrderByComparator<Horse> orderByComparator)
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
+		return getPersistence().findByKind_First(kind, orderByComparator);
+	}
+
+	/**
+	* Returns the first horse in the ordered set where kind = &#63;.
+	*
+	* @param kind the kind
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching horse, or <code>null</code> if a matching horse could not be found
+	*/
+	public static Horse fetchByKind_First(java.lang.String kind,
+		OrderByComparator<Horse> orderByComparator) {
+		return getPersistence().fetchByKind_First(kind, orderByComparator);
+	}
+
+	/**
+	* Returns the last horse in the ordered set where kind = &#63;.
+	*
+	* @param kind the kind
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching horse
+	* @throws NoSuchHorseException if a matching horse could not be found
+	*/
+	public static Horse findByKind_Last(java.lang.String kind,
+		OrderByComparator<Horse> orderByComparator)
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
+		return getPersistence().findByKind_Last(kind, orderByComparator);
+	}
+
+	/**
+	* Returns the last horse in the ordered set where kind = &#63;.
+	*
+	* @param kind the kind
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching horse, or <code>null</code> if a matching horse could not be found
+	*/
+	public static Horse fetchByKind_Last(java.lang.String kind,
+		OrderByComparator<Horse> orderByComparator) {
+		return getPersistence().fetchByKind_Last(kind, orderByComparator);
+	}
+
+	/**
+	* Returns the horses before and after the current horse in the ordered set where kind = &#63;.
+	*
+	* @param horseId the primary key of the current horse
+	* @param kind the kind
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next horse
+	* @throws NoSuchHorseException if a horse with the primary key could not be found
+	*/
+	public static Horse[] findByKind_PrevAndNext(long horseId,
+		java.lang.String kind, OrderByComparator<Horse> orderByComparator)
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
+		return getPersistence()
+				   .findByKind_PrevAndNext(horseId, kind, orderByComparator);
+	}
+
+	/**
+	* Removes all the horses where kind = &#63; from the database.
+	*
+	* @param kind the kind
+	*/
+	public static void removeByKind(java.lang.String kind) {
+		getPersistence().removeByKind(kind);
+	}
+
+	/**
+	* Returns the number of horses where kind = &#63;.
+	*
+	* @param kind the kind
+	* @return the number of matching horses
+	*/
+	public static int countByKind(java.lang.String kind) {
+		return getPersistence().countByKind(kind);
+	}
+
+	/**
 	* Caches the horse in the entity cache if it is enabled.
 	*
 	* @param horse the horse
@@ -925,7 +1083,7 @@ public class HorseUtil {
 	* @throws NoSuchHorseException if a horse with the primary key could not be found
 	*/
 	public static Horse remove(long horseId)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().remove(horseId);
 	}
 
@@ -941,7 +1099,7 @@ public class HorseUtil {
 	* @throws NoSuchHorseException if a horse with the primary key could not be found
 	*/
 	public static Horse findByPrimaryKey(long horseId)
-		throws it.dontesta.labs.liferay.lrbo16.servicebuilder.exception.NoSuchHorseException {
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
 		return getPersistence().findByPrimaryKey(horseId);
 	}
 

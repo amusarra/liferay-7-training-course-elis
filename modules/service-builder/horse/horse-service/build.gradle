@@ -8,5 +8,5 @@ dependencies {
 buildService {
 	apiDir = "../horse-api/src/main/java"
 	osgiModule = true
-	propsUtil = "it.dontesta.labs.liferay.lrbo16.servicebuilder.service.util.PropsUtil"
+	propsUtil = "it.dontesta.labs.liferay.elis.servicebuilder.service.util.PropsUtil"
 }

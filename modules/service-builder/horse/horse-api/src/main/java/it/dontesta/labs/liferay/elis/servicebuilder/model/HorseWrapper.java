@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model;
+package it.dontesta.labs.liferay.elis.servicebuilder.model;
 
 import aQute.bnd.annotation.ProviderType;
 
@@ -178,13 +178,13 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	}
 
 	@Override
-	public com.liferay.portal.kernel.model.CacheModel<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> toCacheModel() {
+	public com.liferay.portal.kernel.model.CacheModel<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> toCacheModel() {
 		return _horse.toCacheModel();
 	}
 
 	@Override
 	public int compareTo(
-		it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse horse) {
+		it.dontesta.labs.liferay.elis.servicebuilder.model.Horse horse) {
 		return _horse.compareTo(horse);
 	}
 
@@ -204,12 +204,12 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	}
 
 	@Override
-	public it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse toEscapedModel() {
+	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse toEscapedModel() {
 		return new HorseWrapper(_horse.toEscapedModel());
 	}
 
 	@Override
-	public it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse toUnescapedModel() {
+	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse toUnescapedModel() {
 		return new HorseWrapper(_horse.toUnescapedModel());
 	}
 

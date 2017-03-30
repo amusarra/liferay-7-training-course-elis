@@ -1,7 +1,7 @@
 Bundle-Name: Liferay LifecycleEvent Portal Application Events Sample
-Bundle-SymbolicName: it.dontesta.labs.liferay.lrbo16.portal.events
+Bundle-SymbolicName: it.dontesta.labs.liferay.elis.portal.events
 Bundle-Version: 1.0.0
-Bundle-Category: Portal Events
+Bundle-Category: Liferay Portal Events
 Bundle-Copyright: Antonio Musarra's Blog
 Bundle-Vendor: Antonio Musarra's Blog
-Bundle-DocURL: http://www.dontesta.it/blog
+Bundle-DocURL: https://www.dontesta.it

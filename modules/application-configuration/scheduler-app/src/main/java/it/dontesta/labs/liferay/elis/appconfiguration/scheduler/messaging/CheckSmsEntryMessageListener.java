@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lfbo16.appconfiguration.scheduler.messaging;
+package it.dontesta.labs.liferay.elis.appconfiguration.scheduler.messaging;
 
 import java.util.Map;
 
@@ -19,11 +19,11 @@ import com.liferay.portal.kernel.scheduler.TriggerFactory;
 import com.liferay.portal.kernel.scheduler.TriggerFactoryUtil;
 
 import aQute.bnd.annotation.metatype.Configurable;
-import it.dontesta.labs.liferay.lfbo16.appconfiguration.scheduler.configuration.SendNotificationWebListenerConfiguration;
-import it.dontesta.labs.liferay.lrbo16.service.horse.HorseService;
+import it.dontesta.labs.liferay.elis.appconfiguration.scheduler.configuration.SendNotificationWebListenerConfiguration;
+import it.dontesta.labs.liferay.elis.service.horse.HorseService;
 
 @Component(
-		configurationPid = "it.dontesta.labs.liferay.lfbo16.appconfiguration.scheduler.configuration.SendNotificationWebListenerConfiguration",
+		configurationPid = "it.dontesta.labs.liferay.elis.appconfiguration.scheduler.configuration.SendNotificationWebListenerConfiguration",
 		immediate = true, 
 		service = CheckSmsEntryMessageListener.class)
 public class CheckSmsEntryMessageListener

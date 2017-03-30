@@ -12,15 +12,17 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service;
+package it.dontesta.labs.liferay.elis.servicebuilder.service;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.osgi.util.ServiceTrackerFactory;
+
 import org.osgi.util.tracker.ServiceTracker;
 
 /**
  * Provides the local service utility for Horse. This utility wraps
- * {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseLocalServiceImpl} and is the
+ * {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseLocalServiceImpl} and is the
  * primary access point for service operations in application layer code running
  * on the local server. Methods of this service will not have security checks
  * based on the propagated JAAS credentials because this service can only be
@@ -28,8 +30,8 @@ import org.osgi.util.tracker.ServiceTracker;
  *
  * @author Brian Wing Shun Chan
  * @see HorseLocalService
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.base.HorseLocalServiceBaseImpl
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseLocalServiceImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.base.HorseLocalServiceBaseImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseLocalServiceImpl
  * @generated
  */
 @ProviderType
@@ -37,7 +39,7 @@ public class HorseLocalServiceUtil {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this class directly. Add custom service methods to {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseLocalServiceImpl} and rerun ServiceBuilder to regenerate this class.
+	 * Never modify this class directly. Add custom service methods to {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseLocalServiceImpl} and rerun ServiceBuilder to regenerate this class.
 	 */
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return getService().getActionableDynamicQuery();
@@ -86,8 +88,8 @@ public class HorseLocalServiceUtil {
 	* @param horse the horse
 	* @return the horse that was added
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse addHorse(
-		it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse horse) {
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
+		it.dontesta.labs.liferay.elis.servicebuilder.model.Horse horse) {
 		return getService().addHorse(horse);
 	}
 
@@ -101,7 +103,7 @@ public class HorseLocalServiceUtil {
 	* @param age
 	* @return
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse addHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return getService().addHorse(name, kind, mantle, gender, age);
@@ -113,7 +115,7 @@ public class HorseLocalServiceUtil {
 	* @param horseId the primary key for the new horse
 	* @return the new horse
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse createHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse createHorse(
 		long horseId) {
 		return getService().createHorse(horseId);
 	}
@@ -124,8 +126,8 @@ public class HorseLocalServiceUtil {
 	* @param horse the horse
 	* @return the horse that was removed
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse deleteHorse(
-		it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse horse) {
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse deleteHorse(
+		it.dontesta.labs.liferay.elis.servicebuilder.model.Horse horse) {
 		return getService().deleteHorse(horse);
 	}
 
@@ -136,13 +138,13 @@ public class HorseLocalServiceUtil {
 	* @return the horse that was removed
 	* @throws PortalException if a horse with the primary key could not be found
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse deleteHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse deleteHorse(
 		long horseId)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return getService().deleteHorse(horseId);
 	}
 
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse fetchHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse fetchHorse(
 		long horseId) {
 		return getService().fetchHorse(horseId);
 	}
@@ -154,7 +156,7 @@ public class HorseLocalServiceUtil {
 	* @param groupId the primary key of the group
 	* @return the matching horse, or <code>null</code> if a matching horse could not be found
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse fetchHorseByUuidAndGroupId(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse fetchHorseByUuidAndGroupId(
 		java.lang.String uuid, long groupId) {
 		return getService().fetchHorseByUuidAndGroupId(uuid, groupId);
 	}
@@ -166,7 +168,7 @@ public class HorseLocalServiceUtil {
 	* @return the horse
 	* @throws PortalException if a horse with the primary key could not be found
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse getHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse getHorse(
 		long horseId)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return getService().getHorse(horseId);
@@ -180,7 +182,7 @@ public class HorseLocalServiceUtil {
 	* @return the matching horse
 	* @throws PortalException if a matching horse could not be found
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse getHorseByUuidAndGroupId(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse getHorseByUuidAndGroupId(
 		java.lang.String uuid, long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return getService().getHorseByUuidAndGroupId(uuid, groupId);
@@ -192,8 +194,8 @@ public class HorseLocalServiceUtil {
 	* @param horse the horse
 	* @return the horse that was updated
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse updateHorse(
-		it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse horse) {
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse updateHorse(
+		it.dontesta.labs.liferay.elis.servicebuilder.model.Horse horse) {
 		return getService().updateHorse(horse);
 	}
 
@@ -221,7 +223,7 @@ public class HorseLocalServiceUtil {
 	* Performs a dynamic query on the database and returns a range of the matching rows.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param dynamicQuery the dynamic query
@@ -239,7 +241,7 @@ public class HorseLocalServiceUtil {
 	* Performs a dynamic query on the database and returns an ordered range of the matching rows.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param dynamicQuery the dynamic query
@@ -260,14 +262,14 @@ public class HorseLocalServiceUtil {
 	* Returns a range of all the horses.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param start the lower bound of the range of horses
 	* @param end the upper bound of the range of horses (not inclusive)
 	* @return the range of horses
 	*/
-	public static java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorses(
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorses(
 		int start, int end) {
 		return getService().getHorses(start, end);
 	}
@@ -279,7 +281,7 @@ public class HorseLocalServiceUtil {
 	* @param companyId the primary key of the company
 	* @return the matching horses, or an empty list if no matches were found
 	*/
-	public static java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorsesByUuidAndCompanyId(
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByUuidAndCompanyId(
 		java.lang.String uuid, long companyId) {
 		return getService().getHorsesByUuidAndCompanyId(uuid, companyId);
 	}
@@ -294,9 +296,9 @@ public class HorseLocalServiceUtil {
 	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	* @return the range of matching horses, or an empty list if no matches were found
 	*/
-	public static java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorsesByUuidAndCompanyId(
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByUuidAndCompanyId(
 		java.lang.String uuid, long companyId, int start, int end,
-		com.liferay.portal.kernel.util.OrderByComparator<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> orderByComparator) {
+		com.liferay.portal.kernel.util.OrderByComparator<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> orderByComparator) {
 		return getService()
 				   .getHorsesByUuidAndCompanyId(uuid, companyId, start, end,
 			orderByComparator);

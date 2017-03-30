@@ -12,12 +12,12 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl;
+package it.dontesta.labs.liferay.elis.servicebuilder.model.impl;
 
 import aQute.bnd.annotation.ProviderType;
 
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseLocalServiceUtil;
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
+import it.dontesta.labs.liferay.elis.servicebuilder.service.HorseLocalServiceUtil;
 
 /**
  * The extended model base implementation for the Horse service. Represents a row in the &quot;LRBO_HORSE_Horse&quot; database table, with each column mapped to a property of this class.

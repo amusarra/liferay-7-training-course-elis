@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lfbo16.service.client;
+package it.dontesta.labs.liferay.elis.service.client;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -6,7 +6,7 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 
-import it.dontesta.labs.liferay.lrbo16.service.horse.HorseService;
+import it.dontesta.labs.liferay.elis.service.horse.HorseService;
 
 @Component(immediate = true, 
 		service = Object.class, 

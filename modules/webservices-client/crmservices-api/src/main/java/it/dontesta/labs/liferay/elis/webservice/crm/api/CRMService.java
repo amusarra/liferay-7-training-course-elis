@@ -1,10 +1,10 @@
-package it.dontesta.labs.liferay.lrbo16.webservice.crm.api;
+package it.dontesta.labs.liferay.elis.webservice.crm.api;
 
 import java.util.List;
 
 import aQute.bnd.annotation.ProviderType;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.exception.CRMServiceException;
-import it.dontesta.labs.liferay.lrbo16.webservice.crm.model.Customer;
+import it.dontesta.labs.liferay.elis.webservice.crm.exception.CRMServiceException;
+import it.dontesta.labs.liferay.elis.webservice.crm.model.Customer;
 
 /**
  * 

@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl;
+package it.dontesta.labs.liferay.elis.servicebuilder.model.impl;
 
 import aQute.bnd.annotation.ProviderType;
 
@@ -21,7 +21,7 @@ import com.liferay.portal.kernel.util.HashUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
 
 import java.io.Externalizable;
 import java.io.IOException;

@@ -12,9 +12,10 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service;
+package it.dontesta.labs.liferay.elis.servicebuilder.service;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.portal.kernel.service.ServiceWrapper;
 
 /**
@@ -42,7 +43,7 @@ public class HorseServiceWrapper implements HorseService,
 	* @return
 	*/
 	@Override
-	public it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse addHorse(
+	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return _horseService.addHorse(name, kind, mantle, gender, age);
@@ -59,18 +60,24 @@ public class HorseServiceWrapper implements HorseService,
 	}
 
 	@Override
-	public java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getCurrentHorseByeAge(
+	public java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getCurrentHorseByeAge(
 		int age) {
 		return _horseService.getCurrentHorseByeAge(age);
 	}
 
 	@Override
-	public java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorses() {
+	public java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorses() {
 		return _horseService.getHorses();
 	}
 
 	@Override
-	public java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorsesByName(
+	public java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByKind(
+		java.lang.String kind) {
+		return _horseService.getHorsesByKind(kind);
+	}
+
+	@Override
+	public java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByName(
 		java.lang.String name) {
 		return _horseService.getHorsesByName(name);
 	}

@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.exception;
+package it.dontesta.labs.liferay.elis.servicebuilder.exception;
 
 import aQute.bnd.annotation.ProviderType;
 

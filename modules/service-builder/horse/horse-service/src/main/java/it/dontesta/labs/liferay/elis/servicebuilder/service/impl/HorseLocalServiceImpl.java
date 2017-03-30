@@ -12,17 +12,17 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl;
+package it.dontesta.labs.liferay.elis.servicebuilder.service.impl;
 
 import aQute.bnd.annotation.ProviderType;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.service.base.HorseLocalServiceBaseImpl;
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
+import it.dontesta.labs.liferay.elis.servicebuilder.service.base.HorseLocalServiceBaseImpl;
 
 /**
  * The implementation of the horse local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseLocalService} interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.dontesta.labs.liferay.elis.servicebuilder.service.HorseLocalService} interface.
  *
  * <p>
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
@@ -30,14 +30,14 @@ import it.dontesta.labs.liferay.lrbo16.servicebuilder.service.base.HorseLocalSer
  *
  * @author Brian Wing Shun Chan
  * @see HorseLocalServiceBaseImpl
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseLocalServiceUtil
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.HorseLocalServiceUtil
  */
 @ProviderType
 public class HorseLocalServiceImpl extends HorseLocalServiceBaseImpl {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Always use {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseLocalServiceUtil} to access the horse local service.
+	 * Never reference this class directly. Always use {@link it.dontesta.labs.liferay.elis.servicebuilder.service.HorseLocalServiceUtil} to access the horse local service.
 	 */
 
     /**

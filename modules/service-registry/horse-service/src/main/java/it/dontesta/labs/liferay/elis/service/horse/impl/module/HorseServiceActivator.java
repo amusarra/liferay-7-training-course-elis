@@ -1,10 +1,10 @@
-package it.dontesta.labs.liferay.lrbo16.service.horse.impl.module;
+package it.dontesta.labs.liferay.elis.service.horse.impl.module;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import it.dontesta.labs.liferay.lrbo16.service.horse.HorseService;
-import it.dontesta.labs.liferay.lrbo16.service.horse.impl.HorseServiceImpl;
+import it.dontesta.labs.liferay.elis.service.horse.HorseService;
+import it.dontesta.labs.liferay.elis.service.horse.impl.HorseServiceImpl;
 
 public class HorseServiceActivator implements BundleActivator {
 

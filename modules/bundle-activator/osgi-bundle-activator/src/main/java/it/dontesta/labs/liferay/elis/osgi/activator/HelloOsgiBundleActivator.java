@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lrbo16.osgi.activator;
+package it.dontesta.labs.liferay.elis.osgi.activator;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

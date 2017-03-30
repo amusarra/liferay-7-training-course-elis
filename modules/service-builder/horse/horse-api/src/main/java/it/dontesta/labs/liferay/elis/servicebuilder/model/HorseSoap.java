@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model;
+package it.dontesta.labs.liferay.elis.servicebuilder.model;
 
 import aQute.bnd.annotation.ProviderType;
 
@@ -23,10 +23,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This class is used by SOAP remote services, specifically {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.http.HorseServiceSoap}.
+ * This class is used by SOAP remote services, specifically {@link it.dontesta.labs.liferay.elis.servicebuilder.service.http.HorseServiceSoap}.
  *
  * @author Brian Wing Shun Chan
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.http.HorseServiceSoap
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.http.HorseServiceSoap
  * @generated
  */
 @ProviderType

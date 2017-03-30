@@ -1,6 +1,11 @@
-Bundle-SymbolicName: crmservices-api
+Bundle-Name: CRM Services API
+Bundle-SymbolicName: it.dontesta.labs.liferay.elis.webservice.crm.api
 Bundle-Version: 1.0.0
+Bundle-Category: Web Services Client
+Bundle-Copyright: Antonio Musarra's Blog
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-DocURL: https://www.dontesta.it
 Export-Package: \
-	it.dontesta.labs.liferay.lrbo16.webservice.crm.model,\
-	it.dontesta.labs.liferay.lrbo16.webservice.crm.api,\
-	it.dontesta.labs.liferay.lrbo16.webservice.crm.exception
+	it.dontesta.labs.liferay.elis.webservice.crm.model,\
+	it.dontesta.labs.liferay.elis.webservice.crm.api,\
+	it.dontesta.labs.liferay.elis.webservice.crm.exception

@@ -12,12 +12,13 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl;
+package it.dontesta.labs.liferay.elis.servicebuilder.service.impl;
 
 import aQute.bnd.annotation.ProviderType;
 import com.liferay.portal.kernel.security.access.control.AccessControlled;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.service.base.HorseServiceBaseImpl;
+
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
+import it.dontesta.labs.liferay.elis.servicebuilder.service.base.HorseServiceBaseImpl;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ import java.util.List;
  * The implementation of the horse remote service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseService} interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.dontesta.labs.liferay.elis.servicebuilder.service.HorseService} interface.
  *
  * <p>
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
@@ -33,14 +34,14 @@ import java.util.List;
  *
  * @author Brian Wing Shun Chan
  * @see HorseServiceBaseImpl
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseServiceUtil
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.HorseServiceUtil
  */
 @ProviderType
 public class HorseServiceImpl extends HorseServiceBaseImpl {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Always use {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseServiceUtil} to access the horse remote service.
+	 * Never reference this class directly. Always use {@link it.dontesta.labs.liferay.elis.servicebuilder.service.HorseServiceUtil} to access the horse remote service.
 	 */
 	@AccessControlled(guestAccessEnabled = true, hostAllowedValidationEnabled = false)
 	@Override
@@ -71,6 +72,11 @@ public class HorseServiceImpl extends HorseServiceBaseImpl {
 	@Override
 	public List<Horse> getCurrentHorseByeAge(int age) {
 		return horsePersistence.findByAgeAndCurrentCreateDate(age);
+	}
+
+	@Override
+	public List<Horse> getHorsesByKind(String kind) {
+		return horsePersistence.findByKind(kind);
 	}
 
 }

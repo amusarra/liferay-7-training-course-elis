@@ -1,4 +1,4 @@
-package it.dontesta.labs.liferay.lrbo16.service.horse;
+package it.dontesta.labs.liferay.elis.service.horse;
 
 public interface HorseService {
 	public String start();

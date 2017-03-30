@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service.util;
+package it.dontesta.labs.liferay.elis.servicebuilder.service.util;
 
 import aQute.bnd.annotation.ProviderType;
 

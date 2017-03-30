@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.dontesta.labs.liferay.lrbo16.webservice.crm.service.configuration;
+package it.dontesta.labs.liferay.elis.webservice.crm.service.configuration;
 
 import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClassDefinition;
 
@@ -13,7 +13,7 @@ import aQute.bnd.annotation.metatype.Meta;
  */
 @ExtendedObjectClassDefinition(category = "LRBO16 Configuration")
 @Meta.OCD(
-		id = "it.dontesta.labs.liferay.lrbo16.webservice.crm.service.configuration.CRMSOAPServiceConfiguration",
+		id = "it.dontesta.labs.liferay.elis.webservice.crm.service.configuration.CRMSOAPServiceConfiguration",
 		localization = "content/Language",
 		name = "crm.services.configuration.name"
 	)

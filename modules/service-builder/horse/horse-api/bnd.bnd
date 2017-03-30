@@ -1,7 +1,12 @@
-Bundle-SymbolicName: horse-api
+Bundle-Name: Horse API by Service Builder
+Bundle-SymbolicName: it.dontesta.labs.liferay.elis.servicebuilder.horse.api
 Bundle-Version: 1.0.0
+Bundle-Category: Liferay Service Builder Framework
+Bundle-Copyright: Antonio Musarra's Blog
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-DocURL: https://www.dontesta.it
 Export-Package:\
-	it.dontesta.labs.liferay.lrbo16.servicebuilder.exception,\
-	it.dontesta.labs.liferay.lrbo16.servicebuilder.model,\
-	it.dontesta.labs.liferay.lrbo16.servicebuilder.service,\
-	it.dontesta.labs.liferay.lrbo16.servicebuilder.service.persistence
+	it.dontesta.labs.liferay.elis.servicebuilder.exception,\
+	it.dontesta.labs.liferay.elis.servicebuilder.model,\
+	it.dontesta.labs.liferay.elis.servicebuilder.service,\
+	it.dontesta.labs.liferay.elis.servicebuilder.service.persistence

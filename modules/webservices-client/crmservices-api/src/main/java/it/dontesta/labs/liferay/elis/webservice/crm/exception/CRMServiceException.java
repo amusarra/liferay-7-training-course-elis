@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.dontesta.labs.liferay.lrbo16.webservice.crm.exception;
+package it.dontesta.labs.liferay.elis.webservice.crm.exception;
 
 /**
  * @author amusarra

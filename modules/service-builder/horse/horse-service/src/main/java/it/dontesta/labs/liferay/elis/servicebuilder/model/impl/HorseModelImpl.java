@@ -12,12 +12,15 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl;
+package it.dontesta.labs.liferay.elis.servicebuilder.model.impl;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.expando.kernel.model.ExpandoBridge;
 import com.liferay.expando.kernel.util.ExpandoBridgeFactoryUtil;
+
 import com.liferay.exportimport.kernel.lar.StagedModelType;
+
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.json.JSON;
@@ -26,14 +29,25 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.model.impl.BaseModelImpl;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.UserLocalServiceUtil;
-import com.liferay.portal.kernel.util.*;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseModel;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.HorseSoap;
+import com.liferay.portal.kernel.util.GetterUtil;
+import com.liferay.portal.kernel.util.PortalUtil;
+import com.liferay.portal.kernel.util.ProxyUtil;
+import com.liferay.portal.kernel.util.StringBundler;
+import com.liferay.portal.kernel.util.StringPool;
+
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
+import it.dontesta.labs.liferay.elis.servicebuilder.model.HorseModel;
+import it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap;
 
 import java.io.Serializable;
+
 import java.sql.Types;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * The base model implementation for the Horse service. Represents a row in the &quot;LRBO_HORSE_Horse&quot; database table, with each column mapped to a property of this class.
@@ -97,20 +111,21 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
 	public static final String TX_MANAGER = "liferayTransactionManager";
-	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(it.dontesta.labs.liferay.lrbo16.servicebuilder.service.util.PropsUtil.get(
-				"value.object.entity.cache.enabled.it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse"),
+	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(it.dontesta.labs.liferay.elis.servicebuilder.service.util.PropsUtil.get(
+				"value.object.entity.cache.enabled.it.dontesta.labs.liferay.elis.servicebuilder.model.Horse"),
 			true);
-	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(it.dontesta.labs.liferay.lrbo16.servicebuilder.service.util.PropsUtil.get(
-				"value.object.finder.cache.enabled.it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse"),
+	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(it.dontesta.labs.liferay.elis.servicebuilder.service.util.PropsUtil.get(
+				"value.object.finder.cache.enabled.it.dontesta.labs.liferay.elis.servicebuilder.model.Horse"),
 			true);
-	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(it.dontesta.labs.liferay.lrbo16.servicebuilder.service.util.PropsUtil.get(
-				"value.object.column.bitmask.enabled.it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse"),
+	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(it.dontesta.labs.liferay.elis.servicebuilder.service.util.PropsUtil.get(
+				"value.object.column.bitmask.enabled.it.dontesta.labs.liferay.elis.servicebuilder.model.Horse"),
 			true);
 	public static final long AGE_COLUMN_BITMASK = 1L;
 	public static final long COMPANYID_COLUMN_BITMASK = 2L;
 	public static final long GROUPID_COLUMN_BITMASK = 4L;
-	public static final long NAME_COLUMN_BITMASK = 8L;
-	public static final long UUID_COLUMN_BITMASK = 16L;
+	public static final long KIND_COLUMN_BITMASK = 8L;
+	public static final long NAME_COLUMN_BITMASK = 16L;
+	public static final long UUID_COLUMN_BITMASK = 32L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -162,8 +177,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		return models;
 	}
 
-	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(it.dontesta.labs.liferay.lrbo16.servicebuilder.service.util.PropsUtil.get(
-				"lock.expiration.time.it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse"));
+	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(it.dontesta.labs.liferay.elis.servicebuilder.service.util.PropsUtil.get(
+				"lock.expiration.time.it.dontesta.labs.liferay.elis.servicebuilder.model.Horse"));
 
 	public HorseModelImpl() {
 	}
@@ -533,7 +548,17 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 	@Override
 	public void setKind(String kind) {
+		_columnBitmask |= KIND_COLUMN_BITMASK;
+
+		if (_originalKind == null) {
+			_originalKind = _kind;
+		}
+
 		_kind = kind;
+	}
+
+	public String getOriginalKind() {
+		return GetterUtil.getString(_originalKind);
 	}
 
 	@JSON
@@ -680,6 +705,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 		horseModelImpl._setOriginalAge = false;
 
+		horseModelImpl._originalKind = horseModelImpl._kind;
+
 		horseModelImpl._columnBitmask = 0;
 	}
 
@@ -806,7 +833,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		StringBundler sb = new StringBundler(43);
 
 		sb.append("<model><model-name>");
-		sb.append("it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse");
+		sb.append("it.dontesta.labs.liferay.elis.servicebuilder.model.Horse");
 		sb.append("</model-name>");
 
 		sb.append(
@@ -892,6 +919,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 	private boolean _setOriginalAge;
 	private String _gender;
 	private String _kind;
+	private String _originalKind;
 	private String _mantle;
 	private long _columnBitmask;
 	private Horse _escapedModel;

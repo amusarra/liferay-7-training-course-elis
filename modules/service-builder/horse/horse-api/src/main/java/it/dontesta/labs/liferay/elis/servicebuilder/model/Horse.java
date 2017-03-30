@@ -12,7 +12,7 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.model;
+package it.dontesta.labs.liferay.elis.servicebuilder.model;
 
 import aQute.bnd.annotation.ProviderType;
 
@@ -25,17 +25,17 @@ import com.liferay.portal.kernel.util.Accessor;
  *
  * @author Brian Wing Shun Chan
  * @see HorseModel
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseImpl
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseModelImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseModelImpl
  * @generated
  */
-@ImplementationClassName("it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseImpl")
+@ImplementationClassName("it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseImpl")
 @ProviderType
 public interface Horse extends HorseModel, PersistedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this interface directly. Add methods to {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.model.impl.HorseImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add methods to {@link it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
 	public static final Accessor<Horse, Long> HORSE_ID_ACCESSOR = new Accessor<Horse, Long>() {
 			@Override

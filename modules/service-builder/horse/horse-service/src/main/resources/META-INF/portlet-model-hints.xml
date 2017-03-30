@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse">
+	<model name="it.dontesta.labs.liferay.elis.servicebuilder.model.Horse">
 		<field name="uuid" type="String" />
 		<field name="horseId" type="long" />
 		<field name="groupId" type="long" />

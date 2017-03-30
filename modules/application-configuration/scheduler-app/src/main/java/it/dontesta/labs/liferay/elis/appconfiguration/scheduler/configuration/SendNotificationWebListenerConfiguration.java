@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.dontesta.labs.liferay.lfbo16.appconfiguration.scheduler.configuration;
+package it.dontesta.labs.liferay.elis.appconfiguration.scheduler.configuration;
 
 import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClassDefinition;
 
@@ -13,7 +13,7 @@ import aQute.bnd.annotation.metatype.Meta;
  */
 @ExtendedObjectClassDefinition(category = "LRBO16 Configuration")
 @Meta.OCD(
-		id = "it.dontesta.labs.liferay.lfbo16.appconfiguration.scheduler.configuration.SendNotificationWebListenerConfiguration",
+		id = "it.dontesta.labs.liferay.elis.appconfiguration.scheduler.configuration.SendNotificationWebListenerConfiguration",
 		localization = "content/Language",
 		name = "system.web.notification.configuration.name"
 	)

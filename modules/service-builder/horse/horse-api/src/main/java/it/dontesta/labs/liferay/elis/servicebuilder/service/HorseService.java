@@ -12,9 +12,10 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service;
+package it.dontesta.labs.liferay.elis.servicebuilder.service;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
@@ -24,7 +25,8 @@ import com.liferay.portal.kernel.spring.osgi.OSGiBeanProperties;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
+
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
 
 import java.util.List;
 
@@ -35,8 +37,8 @@ import java.util.List;
  *
  * @author Brian Wing Shun Chan
  * @see HorseServiceUtil
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.base.HorseServiceBaseImpl
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseServiceImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.base.HorseServiceBaseImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl
  * @generated
  */
 @AccessControlled
@@ -50,7 +52,7 @@ public interface HorseService extends BaseService {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link HorseServiceUtil} to access the horse remote service. Add custom service methods to {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseServiceImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify or reference this interface directly. Always use {@link HorseServiceUtil} to access the horse remote service. Add custom service methods to {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
 
 	/**
@@ -79,6 +81,9 @@ public interface HorseService extends BaseService {
 	@AccessControlled(guestAccessEnabled = true, hostAllowedValidationEnabled = false)
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Horse> getHorses();
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<Horse> getHorsesByKind(java.lang.String kind);
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Horse> getHorsesByName(java.lang.String name);

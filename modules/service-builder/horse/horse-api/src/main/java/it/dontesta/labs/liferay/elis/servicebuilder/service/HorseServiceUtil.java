@@ -12,15 +12,17 @@
  * details.
  */
 
-package it.dontesta.labs.liferay.lrbo16.servicebuilder.service;
+package it.dontesta.labs.liferay.elis.servicebuilder.service;
 
 import aQute.bnd.annotation.ProviderType;
+
 import com.liferay.osgi.util.ServiceTrackerFactory;
+
 import org.osgi.util.tracker.ServiceTracker;
 
 /**
  * Provides the remote service utility for Horse. This utility wraps
- * {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseServiceImpl} and is the
+ * {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl} and is the
  * primary access point for service operations in application layer code running
  * on a remote server. Methods of this service are expected to have security
  * checks based on the propagated JAAS credentials because this service can be
@@ -28,8 +30,8 @@ import org.osgi.util.tracker.ServiceTracker;
  *
  * @author Brian Wing Shun Chan
  * @see HorseService
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.base.HorseServiceBaseImpl
- * @see it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseServiceImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.base.HorseServiceBaseImpl
+ * @see it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl
  * @generated
  */
 @ProviderType
@@ -37,7 +39,7 @@ public class HorseServiceUtil {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this class directly. Add custom service methods to {@link it.dontesta.labs.liferay.lrbo16.servicebuilder.service.impl.HorseServiceImpl} and rerun ServiceBuilder to regenerate this class.
+	 * Never modify this class directly. Add custom service methods to {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl} and rerun ServiceBuilder to regenerate this class.
 	 */
 
 	/**
@@ -50,7 +52,7 @@ public class HorseServiceUtil {
 	* @param age
 	* @return
 	*/
-	public static it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse addHorse(
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return getService().addHorse(name, kind, mantle, gender, age);
@@ -65,16 +67,21 @@ public class HorseServiceUtil {
 		return getService().getOSGiServiceIdentifier();
 	}
 
-	public static java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getCurrentHorseByeAge(
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getCurrentHorseByeAge(
 		int age) {
 		return getService().getCurrentHorseByeAge(age);
 	}
 
-	public static java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorses() {
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorses() {
 		return getService().getHorses();
 	}
 
-	public static java.util.List<it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse> getHorsesByName(
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByKind(
+		java.lang.String kind) {
+		return getService().getHorsesByKind(kind);
+	}
+
+	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByName(
 		java.lang.String name) {
 		return getService().getHorsesByName(name);
 	}

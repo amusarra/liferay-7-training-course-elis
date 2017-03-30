@@ -1,24 +1,25 @@
-package it.dontesta.labs.liferay.lfbo16.service.client;
-
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.model.Horse;
-import it.dontesta.labs.liferay.lrbo16.servicebuilder.service.HorseServiceUtil;
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
-import org.osgi.service.component.annotations.ReferencePolicy;
+package it.dontesta.labs.liferay.elis.service.client;
 
 import java.util.List;
 
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
-@Component(immediate = true,
-        service = Object.class,
-        property =
-                {
-                        "osgi.command.function=createHorse",
-                        "osgi.command.function=getCurrentHorseByAge",
-                        "osgi.command.scope=custom"
-                }
-)
+import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
+import it.dontesta.labs.liferay.elis.servicebuilder.service.HorseService;
+import it.dontesta.labs.liferay.elis.servicebuilder.service.HorseServiceUtil;
+
+
+@Component(immediate = true, 
+	service = Object.class, 
+	property = {
+	"osgi.command.function=createHorse",
+	"osgi.command.function=getCurrentHorseByAge",
+	"osgi.command.function=getAllHorse", 
+	"osgi.command.function=getHorseByName",
+	"osgi.command.function=getHorseByKind", 
+	"osgi.command.scope=elis"
+})
 public class HorseClientCommand {
 
     /**
@@ -32,7 +33,7 @@ public class HorseClientCommand {
      */
     public void createHorse(String name, String kind, String mantle, String gender, int age) {
 
-        Horse horse = _horseServiceUtil.addHorse(name, kind, mantle, gender, age);
+        Horse horse = _horseService.addHorse(name, kind, mantle, gender, age);
 
         System.out.println("Horse created whit id "
                 + horse.getPrimaryKey());
@@ -45,26 +46,53 @@ public class HorseClientCommand {
      */
     public void getCurrentHorseByAge(int age) {
 
-        List<Horse> horses = _horseServiceUtil.getCurrentHorseByeAge(age);
-
-        for (Horse horse : horses) {
-            System.out.println("Horse: " + horse.getName());
-        }
+    	List<Horse> horses = _horseService.getCurrentHorseByeAge(age);
+        horses.forEach(System.out::println);       
+   
     }
+    
 
-    @Reference(
-            policy = ReferencePolicy.DYNAMIC,
-            cardinality = ReferenceCardinality.OPTIONAL
-    )
-    protected void setHorseServiceUtil(HorseServiceUtil horseService) {
-        System.out.println("[Horse Service Client]: setting hello service");
-        _horseServiceUtil = horseService;
+    /**
+     * Get all Horse
+     */
+    public void getAllHorse() {
+
+    	List<Horse> horses = _horseService.getHorses();
+        horses.forEach(System.out::println);       
+    }
+    
+    /**
+     * Get Horse by Name
+     * 
+     * @param name
+     */
+    public void getHorseByName(String name) {
+
+    	List<Horse> horses = _horseService.getHorsesByName(name);
+        horses.forEach(System.out::println);       
+
+    }
+    
+    /**
+     * Get Horse by kind
+     * 
+     * @param kind
+     */
+    public void getHorseByKind(String kind) {
+
+    	List<Horse> horses = _horseService.getHorsesByKind(kind);
+        horses.forEach(System.out::println);       
+
+    }
+    
+    @Reference
+    protected void setHorseService(HorseService horseService) {
+    	_horseService = horseService;
     }
 
     protected void unsetHorseServiceUtil(HorseServiceUtil horseService) {
-
-        _horseServiceUtil = null;
+    	_horseService = null;
     }
 
-    private static HorseServiceUtil _horseServiceUtil;
+    private HorseService _horseService;
 }
