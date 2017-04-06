@@ -15,6 +15,7 @@
 		<field name="gender" type="String" />
 		<field name="kind" type="String" />
 		<field name="mantle" type="String" />
+		<field name="dateOfBirth" type="Date" />
 		<field name="photoId" type="long" />
 		<field name="resourceBlockId" type="long" />
 	</model>

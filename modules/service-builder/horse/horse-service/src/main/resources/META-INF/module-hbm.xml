@@ -19,6 +19,7 @@
 		<property name="gender" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="kind" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="mantle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateOfBirth" type="org.hibernate.type.TimestampType" />
 		<property name="photoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="resourceBlockId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>

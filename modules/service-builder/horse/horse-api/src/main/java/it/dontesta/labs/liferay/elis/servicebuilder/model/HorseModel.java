@@ -285,6 +285,20 @@ public interface HorseModel extends BaseModel<Horse>, GroupedModel, ShardedModel
 	public void setMantle(String mantle);
 
 	/**
+	 * Returns the date of birth of this horse.
+	 *
+	 * @return the date of birth of this horse
+	 */
+	public Date getDateOfBirth();
+
+	/**
+	 * Sets the date of birth of this horse.
+	 *
+	 * @param dateOfBirth the date of birth of this horse
+	 */
+	public void setDateOfBirth(Date dateOfBirth);
+
+	/**
 	 * Returns the photo ID of this horse.
 	 *
 	 * @return the photo ID of this horse

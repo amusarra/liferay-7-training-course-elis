@@ -1,7 +1,8 @@
 package it.dontesta.labs.liferay.elis.portlet.horse.constants;
 
 /**
- * Created by amusarra on 06/04/17.
+ * @author amusarra
  */
 public class HorseWebKeys {
+	public static final String HORSE_ENTRY = "HORSE_ENTRY";
 }

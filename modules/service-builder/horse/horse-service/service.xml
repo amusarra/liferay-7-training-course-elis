@@ -28,6 +28,7 @@
 		<column name="gender" type="String" />
 		<column name="kind" type="String" />
 		<column name="mantle" type="String" />
+		<column name="dateOfBirth" type="Date" />
 		<column name="photoId" type="long" />
 
 		<!-- Permission fields -->

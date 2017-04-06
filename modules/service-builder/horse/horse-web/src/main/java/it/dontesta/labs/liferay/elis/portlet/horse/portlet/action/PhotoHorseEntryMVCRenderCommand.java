@@ -17,7 +17,7 @@ import javax.portlet.RenderResponse;
         },
         service = MVCRenderCommand.class
 )
-public class PhotoMVCRenderCommand implements MVCRenderCommand {
+public class PhotoHorseEntryMVCRenderCommand implements MVCRenderCommand {
 
     @Override
     public String render(

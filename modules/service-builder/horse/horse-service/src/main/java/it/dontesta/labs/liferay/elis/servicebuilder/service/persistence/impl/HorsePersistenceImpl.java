@@ -4252,6 +4252,7 @@ public class HorsePersistenceImpl extends BasePersistenceImpl<Horse>
 		horseImpl.setGender(horse.getGender());
 		horseImpl.setKind(horse.getKind());
 		horseImpl.setMantle(horse.getMantle());
+		horseImpl.setDateOfBirth(horse.getDateOfBirth());
 		horseImpl.setPhotoId(horse.getPhotoId());
 		horseImpl.setResourceBlockId(horse.getResourceBlockId());
 

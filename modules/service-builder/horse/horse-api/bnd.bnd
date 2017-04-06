@@ -9,4 +9,5 @@ Export-Package:\
 	it.dontesta.labs.liferay.elis.servicebuilder.exception,\
 	it.dontesta.labs.liferay.elis.servicebuilder.model,\
 	it.dontesta.labs.liferay.elis.servicebuilder.service,\
-	it.dontesta.labs.liferay.elis.servicebuilder.service.persistence
+	it.dontesta.labs.liferay.elis.servicebuilder.service.persistence,\
+	it.dontesta.labs.liferay.elis.portlet.horse.constants

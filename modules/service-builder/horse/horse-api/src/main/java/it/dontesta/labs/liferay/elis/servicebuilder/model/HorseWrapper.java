@@ -72,6 +72,7 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 		attributes.put("gender", getGender());
 		attributes.put("kind", getKind());
 		attributes.put("mantle", getMantle());
+		attributes.put("dateOfBirth", getDateOfBirth());
 		attributes.put("photoId", getPhotoId());
 		attributes.put("resourceBlockId", getResourceBlockId());
 
@@ -156,6 +157,12 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 
 		if (mantle != null) {
 			setMantle(mantle);
+		}
+
+		Date dateOfBirth = (Date)attributes.get("dateOfBirth");
+
+		if (dateOfBirth != null) {
+			setDateOfBirth(dateOfBirth);
 		}
 
 		Long photoId = (Long)attributes.get("photoId");
@@ -328,6 +335,16 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	}
 
 	/**
+	* Returns the date of birth of this horse.
+	*
+	* @return the date of birth of this horse
+	*/
+	@Override
+	public Date getDateOfBirth() {
+		return _horse.getDateOfBirth();
+	}
+
+	/**
 	* Returns the modified date of this horse.
 	*
 	* @return the modified date of this horse
@@ -445,6 +462,16 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	@Override
 	public void setCreateDate(Date createDate) {
 		_horse.setCreateDate(createDate);
+	}
+
+	/**
+	* Sets the date of birth of this horse.
+	*
+	* @param dateOfBirth the date of birth of this horse
+	*/
+	@Override
+	public void setDateOfBirth(Date dateOfBirth) {
+		_horse.setDateOfBirth(dateOfBirth);
 	}
 
 	@Override

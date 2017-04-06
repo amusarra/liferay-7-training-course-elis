@@ -85,6 +85,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 			{ "gender", Types.VARCHAR },
 			{ "kind", Types.VARCHAR },
 			{ "mantle", Types.VARCHAR },
+			{ "dateOfBirth", Types.TIMESTAMP },
 			{ "photoId", Types.BIGINT },
 			{ "resourceBlockId", Types.BIGINT }
 		};
@@ -104,11 +105,12 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		TABLE_COLUMNS_MAP.put("gender", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("kind", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("mantle", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("dateOfBirth", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("photoId", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("resourceBlockId", Types.BIGINT);
 	}
 
-	public static final String TABLE_SQL_CREATE = "create table LRBO_HORSE_Horse (uuid_ VARCHAR(75) null,horseId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,age INTEGER,gender VARCHAR(75) null,kind VARCHAR(75) null,mantle VARCHAR(75) null,photoId LONG,resourceBlockId LONG)";
+	public static final String TABLE_SQL_CREATE = "create table LRBO_HORSE_Horse (uuid_ VARCHAR(75) null,horseId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,age INTEGER,gender VARCHAR(75) null,kind VARCHAR(75) null,mantle VARCHAR(75) null,dateOfBirth DATE null,photoId LONG,resourceBlockId LONG)";
 	public static final String TABLE_SQL_DROP = "drop table LRBO_HORSE_Horse";
 	public static final String ORDER_BY_JPQL = " ORDER BY horse.name ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY LRBO_HORSE_Horse.name ASC";
@@ -158,6 +160,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		model.setGender(soapModel.getGender());
 		model.setKind(soapModel.getKind());
 		model.setMantle(soapModel.getMantle());
+		model.setDateOfBirth(soapModel.getDateOfBirth());
 		model.setPhotoId(soapModel.getPhotoId());
 		model.setResourceBlockId(soapModel.getResourceBlockId());
 
@@ -237,6 +240,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		attributes.put("gender", getGender());
 		attributes.put("kind", getKind());
 		attributes.put("mantle", getMantle());
+		attributes.put("dateOfBirth", getDateOfBirth());
 		attributes.put("photoId", getPhotoId());
 		attributes.put("resourceBlockId", getResourceBlockId());
 
@@ -324,6 +328,12 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 		if (mantle != null) {
 			setMantle(mantle);
+		}
+
+		Date dateOfBirth = (Date)attributes.get("dateOfBirth");
+
+		if (dateOfBirth != null) {
+			setDateOfBirth(dateOfBirth);
 		}
 
 		Long photoId = (Long)attributes.get("photoId");
@@ -600,6 +610,17 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 	@JSON
 	@Override
+	public Date getDateOfBirth() {
+		return _dateOfBirth;
+	}
+
+	@Override
+	public void setDateOfBirth(Date dateOfBirth) {
+		_dateOfBirth = dateOfBirth;
+	}
+
+	@JSON
+	@Override
 	public long getPhotoId() {
 		return _photoId;
 	}
@@ -682,6 +703,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		horseImpl.setGender(getGender());
 		horseImpl.setKind(getKind());
 		horseImpl.setMantle(getMantle());
+		horseImpl.setDateOfBirth(getDateOfBirth());
 		horseImpl.setPhotoId(getPhotoId());
 		horseImpl.setResourceBlockId(getResourceBlockId());
 
@@ -851,6 +873,15 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 			horseCacheModel.mantle = null;
 		}
 
+		Date dateOfBirth = getDateOfBirth();
+
+		if (dateOfBirth != null) {
+			horseCacheModel.dateOfBirth = dateOfBirth.getTime();
+		}
+		else {
+			horseCacheModel.dateOfBirth = Long.MIN_VALUE;
+		}
+
 		horseCacheModel.photoId = getPhotoId();
 
 		horseCacheModel.resourceBlockId = getResourceBlockId();
@@ -860,7 +891,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -888,6 +919,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		sb.append(getKind());
 		sb.append(", mantle=");
 		sb.append(getMantle());
+		sb.append(", dateOfBirth=");
+		sb.append(getDateOfBirth());
 		sb.append(", photoId=");
 		sb.append(getPhotoId());
 		sb.append(", resourceBlockId=");
@@ -899,7 +932,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(49);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("it.dontesta.labs.liferay.elis.servicebuilder.model.Horse");
@@ -958,6 +991,10 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		sb.append(getMantle());
 		sb.append("]]></column-value></column>");
 		sb.append(
+			"<column><column-name>dateOfBirth</column-name><column-value><![CDATA[");
+		sb.append(getDateOfBirth());
+		sb.append("]]></column-value></column>");
+		sb.append(
 			"<column><column-name>photoId</column-name><column-value><![CDATA[");
 		sb.append(getPhotoId());
 		sb.append("]]></column-value></column>");
@@ -998,6 +1035,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 	private String _kind;
 	private String _originalKind;
 	private String _mantle;
+	private Date _dateOfBirth;
 	private long _photoId;
 	private long _resourceBlockId;
 	private long _originalResourceBlockId;

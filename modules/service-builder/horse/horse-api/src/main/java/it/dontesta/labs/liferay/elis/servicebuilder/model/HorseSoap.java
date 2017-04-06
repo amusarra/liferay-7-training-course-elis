@@ -47,6 +47,7 @@ public class HorseSoap implements Serializable {
 		soapModel.setGender(model.getGender());
 		soapModel.setKind(model.getKind());
 		soapModel.setMantle(model.getMantle());
+		soapModel.setDateOfBirth(model.getDateOfBirth());
 		soapModel.setPhotoId(model.getPhotoId());
 		soapModel.setResourceBlockId(model.getResourceBlockId());
 
@@ -205,6 +206,14 @@ public class HorseSoap implements Serializable {
 		_mantle = mantle;
 	}
 
+	public Date getDateOfBirth() {
+		return _dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		_dateOfBirth = dateOfBirth;
+	}
+
 	public long getPhotoId() {
 		return _photoId;
 	}
@@ -234,6 +243,7 @@ public class HorseSoap implements Serializable {
 	private String _gender;
 	private String _kind;
 	private String _mantle;
+	private Date _dateOfBirth;
 	private long _photoId;
 	private long _resourceBlockId;
 }

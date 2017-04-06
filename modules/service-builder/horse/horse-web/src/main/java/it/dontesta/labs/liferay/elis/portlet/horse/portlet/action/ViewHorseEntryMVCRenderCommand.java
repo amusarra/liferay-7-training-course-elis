@@ -13,16 +13,16 @@ import javax.portlet.RenderResponse;
 @Component(
         property = {
                 "javax.portlet.name=" + HorsePortletKeys.HORSE,
-                "mvc.command.name=/horse/view"
+                "mvc.command.name=/horse/view_entry"
         },
         service = MVCRenderCommand.class
 )
-public class ViewHorseEntriesMVCRenderCommand implements MVCRenderCommand {
+public class ViewHorseEntryMVCRenderCommand implements MVCRenderCommand {
 
     @Override
     public String render(
             RenderRequest renderRequest, RenderResponse renderResponse) {
 
-        return "/horse/view.jsp";
+        return "/horse/view_entry.jsp";
     }
 }
