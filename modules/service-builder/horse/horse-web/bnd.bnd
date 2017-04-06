@@ -1,0 +1,7 @@
+Bundle-Name: Horse Web by Service Builder
+Bundle-SymbolicName: it.dontesta.labs.liferay.elis.portlet.horse
+Bundle-Version: 1.0.0
+Bundle-Category: Liferay MVC Portlet Framework
+Bundle-Copyright: Antonio Musarra's Blog
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-DocURL: https://www.dontesta.it
