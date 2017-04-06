@@ -58,6 +58,12 @@ public class HorseServiceUtil {
 		return getService().addHorse(name, kind, mantle, gender, age);
 	}
 
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse getHorse(
+		long horseId)
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
+		return getService().getHorse(horseId);
+	}
+
 	/**
 	* Returns the OSGi service identifier.
 	*

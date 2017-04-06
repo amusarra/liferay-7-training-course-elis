@@ -81,11 +81,42 @@ public class HorseServiceHttp {
 		}
 	}
 
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse getHorse(
+		HttpPrincipal httpPrincipal, long horseId)
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
+		try {
+			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
+					"getHorse", _getHorseParameterTypes1);
+
+			MethodHandler methodHandler = new MethodHandler(methodKey, horseId);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception e) {
+				if (e instanceof it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException) {
+					throw (it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException)e;
+				}
+
+				throw new com.liferay.portal.kernel.exception.SystemException(e);
+			}
+
+			return (it.dontesta.labs.liferay.elis.servicebuilder.model.Horse)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException se) {
+			_log.error(se, se);
+
+			throw se;
+		}
+	}
+
 	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getHorsesByName(
 		HttpPrincipal httpPrincipal, java.lang.String name) {
 		try {
 			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
-					"getHorsesByName", _getHorsesByNameParameterTypes1);
+					"getHorsesByName", _getHorsesByNameParameterTypes2);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, name);
 
@@ -113,7 +144,7 @@ public class HorseServiceHttp {
 		java.lang.String gender, int age) {
 		try {
 			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
-					"addHorse", _addHorseParameterTypes2);
+					"addHorse", _addHorseParameterTypes3);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, name,
 					kind, mantle, gender, age);
@@ -141,7 +172,7 @@ public class HorseServiceHttp {
 		try {
 			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
 					"getCurrentHorseByeAge",
-					_getCurrentHorseByeAgeParameterTypes3);
+					_getCurrentHorseByeAgeParameterTypes4);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, age);
 
@@ -167,7 +198,7 @@ public class HorseServiceHttp {
 		HttpPrincipal httpPrincipal, java.lang.String kind) {
 		try {
 			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
-					"getHorsesByKind", _getHorsesByKindParameterTypes4);
+					"getHorsesByKind", _getHorsesByKindParameterTypes5);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, kind);
 
@@ -191,17 +222,20 @@ public class HorseServiceHttp {
 
 	private static Log _log = LogFactoryUtil.getLog(HorseServiceHttp.class);
 	private static final Class<?>[] _getHorsesParameterTypes0 = new Class[] {  };
-	private static final Class<?>[] _getHorsesByNameParameterTypes1 = new Class[] {
+	private static final Class<?>[] _getHorseParameterTypes1 = new Class[] {
+			long.class
+		};
+	private static final Class<?>[] _getHorsesByNameParameterTypes2 = new Class[] {
 			java.lang.String.class
 		};
-	private static final Class<?>[] _addHorseParameterTypes2 = new Class[] {
+	private static final Class<?>[] _addHorseParameterTypes3 = new Class[] {
 			java.lang.String.class, java.lang.String.class,
 			java.lang.String.class, java.lang.String.class, int.class
 		};
-	private static final Class<?>[] _getCurrentHorseByeAgeParameterTypes3 = new Class[] {
+	private static final Class<?>[] _getCurrentHorseByeAgeParameterTypes4 = new Class[] {
 			int.class
 		};
-	private static final Class<?>[] _getHorsesByKindParameterTypes4 = new Class[] {
+	private static final Class<?>[] _getHorsesByKindParameterTypes5 = new Class[] {
 			java.lang.String.class
 		};
 }

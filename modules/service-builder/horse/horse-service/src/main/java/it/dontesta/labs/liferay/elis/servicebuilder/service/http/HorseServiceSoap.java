@@ -80,6 +80,21 @@ public class HorseServiceSoap {
 		}
 	}
 
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap getHorse(
+		long horseId) throws RemoteException {
+		try {
+			it.dontesta.labs.liferay.elis.servicebuilder.model.Horse returnValue =
+				HorseServiceUtil.getHorse(horseId);
+
+			return it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static it.dontesta.labs.liferay.elis.servicebuilder.model.HorseSoap[] getHorsesByName(
 		java.lang.String name) throws RemoteException {
 		try {

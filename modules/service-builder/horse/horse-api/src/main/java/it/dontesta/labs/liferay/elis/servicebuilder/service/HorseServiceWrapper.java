@@ -49,6 +49,13 @@ public class HorseServiceWrapper implements HorseService,
 		return _horseService.addHorse(name, kind, mantle, gender, age);
 	}
 
+	@Override
+	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse getHorse(
+		long horseId)
+		throws it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException {
+		return _horseService.getHorse(horseId);
+	}
+
 	/**
 	* Returns the OSGi service identifier.
 	*

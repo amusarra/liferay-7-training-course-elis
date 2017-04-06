@@ -26,6 +26,7 @@ import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
 
+import it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException;
 import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
 
 import java.util.List;
@@ -68,6 +69,9 @@ public interface HorseService extends BaseService {
 	public Horse addHorse(java.lang.String name, java.lang.String kind,
 		java.lang.String mantle, java.lang.String gender, int age);
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public Horse getHorse(long horseId) throws NoSuchHorseException;
+
 	/**
 	* Returns the OSGi service identifier.
 	*
@@ -78,7 +82,6 @@ public interface HorseService extends BaseService {
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Horse> getCurrentHorseByeAge(int age);
 
-	@AccessControlled(guestAccessEnabled = true, hostAllowedValidationEnabled = false)
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Horse> getHorses();
 

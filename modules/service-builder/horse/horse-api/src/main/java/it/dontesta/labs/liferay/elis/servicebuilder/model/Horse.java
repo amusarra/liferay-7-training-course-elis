@@ -17,7 +17,7 @@ package it.dontesta.labs.liferay.elis.servicebuilder.model;
 import aQute.bnd.annotation.ProviderType;
 
 import com.liferay.portal.kernel.annotation.ImplementationClassName;
-import com.liferay.portal.kernel.model.PersistedModel;
+import com.liferay.portal.kernel.model.PermissionedModel;
 import com.liferay.portal.kernel.util.Accessor;
 
 /**
@@ -31,7 +31,7 @@ import com.liferay.portal.kernel.util.Accessor;
  */
 @ImplementationClassName("it.dontesta.labs.liferay.elis.servicebuilder.model.impl.HorseImpl")
 @ProviderType
-public interface Horse extends HorseModel, PersistedModel {
+public interface Horse extends HorseModel, PermissionedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *

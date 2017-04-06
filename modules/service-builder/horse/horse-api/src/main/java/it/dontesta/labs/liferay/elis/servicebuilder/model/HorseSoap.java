@@ -47,6 +47,8 @@ public class HorseSoap implements Serializable {
 		soapModel.setGender(model.getGender());
 		soapModel.setKind(model.getKind());
 		soapModel.setMantle(model.getMantle());
+		soapModel.setPhotoId(model.getPhotoId());
+		soapModel.setResourceBlockId(model.getResourceBlockId());
 
 		return soapModel;
 	}
@@ -203,6 +205,22 @@ public class HorseSoap implements Serializable {
 		_mantle = mantle;
 	}
 
+	public long getPhotoId() {
+		return _photoId;
+	}
+
+	public void setPhotoId(long photoId) {
+		_photoId = photoId;
+	}
+
+	public long getResourceBlockId() {
+		return _resourceBlockId;
+	}
+
+	public void setResourceBlockId(long resourceBlockId) {
+		_resourceBlockId = resourceBlockId;
+	}
+
 	private String _uuid;
 	private long _horseId;
 	private long _groupId;
@@ -216,4 +234,6 @@ public class HorseSoap implements Serializable {
 	private String _gender;
 	private String _kind;
 	private String _mantle;
+	private long _photoId;
+	private long _resourceBlockId;
 }

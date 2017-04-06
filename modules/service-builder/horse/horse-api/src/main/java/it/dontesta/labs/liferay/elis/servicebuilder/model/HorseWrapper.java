@@ -72,6 +72,8 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 		attributes.put("gender", getGender());
 		attributes.put("kind", getKind());
 		attributes.put("mantle", getMantle());
+		attributes.put("photoId", getPhotoId());
+		attributes.put("resourceBlockId", getResourceBlockId());
 
 		return attributes;
 	}
@@ -154,6 +156,18 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 
 		if (mantle != null) {
 			setMantle(mantle);
+		}
+
+		Long photoId = (Long)attributes.get("photoId");
+
+		if (photoId != null) {
+			setPhotoId(photoId);
+		}
+
+		Long resourceBlockId = (Long)attributes.get("resourceBlockId");
+
+		if (resourceBlockId != null) {
+			setResourceBlockId(resourceBlockId);
 		}
 	}
 
@@ -354,6 +368,16 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	}
 
 	/**
+	* Returns the photo ID of this horse.
+	*
+	* @return the photo ID of this horse
+	*/
+	@Override
+	public long getPhotoId() {
+		return _horse.getPhotoId();
+	}
+
+	/**
 	* Returns the primary key of this horse.
 	*
 	* @return the primary key of this horse
@@ -361,6 +385,16 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	@Override
 	public long getPrimaryKey() {
 		return _horse.getPrimaryKey();
+	}
+
+	/**
+	* Returns the resource block ID of this horse.
+	*
+	* @return the resource block ID of this horse
+	*/
+	@Override
+	public long getResourceBlockId() {
+		return _horse.getResourceBlockId();
 	}
 
 	/**
@@ -505,6 +539,16 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	}
 
 	/**
+	* Sets the photo ID of this horse.
+	*
+	* @param photoId the photo ID of this horse
+	*/
+	@Override
+	public void setPhotoId(long photoId) {
+		_horse.setPhotoId(photoId);
+	}
+
+	/**
 	* Sets the primary key of this horse.
 	*
 	* @param primaryKey the primary key of this horse
@@ -517,6 +561,16 @@ public class HorseWrapper implements Horse, ModelWrapper<Horse> {
 	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		_horse.setPrimaryKeyObj(primaryKeyObj);
+	}
+
+	/**
+	* Sets the resource block ID of this horse.
+	*
+	* @param resourceBlockId the resource block ID of this horse
+	*/
+	@Override
+	public void setResourceBlockId(long resourceBlockId) {
+		_horse.setResourceBlockId(resourceBlockId);
 	}
 
 	/**

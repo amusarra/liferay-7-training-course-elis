@@ -84,7 +84,9 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 			{ "age", Types.INTEGER },
 			{ "gender", Types.VARCHAR },
 			{ "kind", Types.VARCHAR },
-			{ "mantle", Types.VARCHAR }
+			{ "mantle", Types.VARCHAR },
+			{ "photoId", Types.BIGINT },
+			{ "resourceBlockId", Types.BIGINT }
 		};
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP = new HashMap<String, Integer>();
 
@@ -102,9 +104,11 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		TABLE_COLUMNS_MAP.put("gender", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("kind", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("mantle", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("photoId", Types.BIGINT);
+		TABLE_COLUMNS_MAP.put("resourceBlockId", Types.BIGINT);
 	}
 
-	public static final String TABLE_SQL_CREATE = "create table LRBO_HORSE_Horse (uuid_ VARCHAR(75) null,horseId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,age INTEGER,gender VARCHAR(75) null,kind VARCHAR(75) null,mantle VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table LRBO_HORSE_Horse (uuid_ VARCHAR(75) null,horseId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,age INTEGER,gender VARCHAR(75) null,kind VARCHAR(75) null,mantle VARCHAR(75) null,photoId LONG,resourceBlockId LONG)";
 	public static final String TABLE_SQL_DROP = "drop table LRBO_HORSE_Horse";
 	public static final String ORDER_BY_JPQL = " ORDER BY horse.name ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY LRBO_HORSE_Horse.name ASC";
@@ -125,7 +129,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 	public static final long GROUPID_COLUMN_BITMASK = 4L;
 	public static final long KIND_COLUMN_BITMASK = 8L;
 	public static final long NAME_COLUMN_BITMASK = 16L;
-	public static final long UUID_COLUMN_BITMASK = 32L;
+	public static final long RESOURCEBLOCKID_COLUMN_BITMASK = 32L;
+	public static final long UUID_COLUMN_BITMASK = 64L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -153,6 +158,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		model.setGender(soapModel.getGender());
 		model.setKind(soapModel.getKind());
 		model.setMantle(soapModel.getMantle());
+		model.setPhotoId(soapModel.getPhotoId());
+		model.setResourceBlockId(soapModel.getResourceBlockId());
 
 		return model;
 	}
@@ -230,6 +237,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		attributes.put("gender", getGender());
 		attributes.put("kind", getKind());
 		attributes.put("mantle", getMantle());
+		attributes.put("photoId", getPhotoId());
+		attributes.put("resourceBlockId", getResourceBlockId());
 
 		attributes.put("entityCacheEnabled", isEntityCacheEnabled());
 		attributes.put("finderCacheEnabled", isFinderCacheEnabled());
@@ -315,6 +324,18 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 		if (mantle != null) {
 			setMantle(mantle);
+		}
+
+		Long photoId = (Long)attributes.get("photoId");
+
+		if (photoId != null) {
+			setPhotoId(photoId);
+		}
+
+		Long resourceBlockId = (Long)attributes.get("resourceBlockId");
+
+		if (resourceBlockId != null) {
+			setResourceBlockId(resourceBlockId);
 		}
 	}
 
@@ -577,6 +598,40 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		_mantle = mantle;
 	}
 
+	@JSON
+	@Override
+	public long getPhotoId() {
+		return _photoId;
+	}
+
+	@Override
+	public void setPhotoId(long photoId) {
+		_photoId = photoId;
+	}
+
+	@JSON
+	@Override
+	public long getResourceBlockId() {
+		return _resourceBlockId;
+	}
+
+	@Override
+	public void setResourceBlockId(long resourceBlockId) {
+		_columnBitmask |= RESOURCEBLOCKID_COLUMN_BITMASK;
+
+		if (!_setOriginalResourceBlockId) {
+			_setOriginalResourceBlockId = true;
+
+			_originalResourceBlockId = _resourceBlockId;
+		}
+
+		_resourceBlockId = resourceBlockId;
+	}
+
+	public long getOriginalResourceBlockId() {
+		return _originalResourceBlockId;
+	}
+
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
@@ -627,6 +682,8 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		horseImpl.setGender(getGender());
 		horseImpl.setKind(getKind());
 		horseImpl.setMantle(getMantle());
+		horseImpl.setPhotoId(getPhotoId());
+		horseImpl.setResourceBlockId(getResourceBlockId());
 
 		horseImpl.resetOriginalValues();
 
@@ -637,7 +694,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 	public int compareTo(Horse horse) {
 		int value = 0;
 
-		value = getName().compareTo(horse.getName());
+		value = getName().compareToIgnoreCase(horse.getName());
 
 		if (value != 0) {
 			return value;
@@ -706,6 +763,10 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		horseModelImpl._setOriginalAge = false;
 
 		horseModelImpl._originalKind = horseModelImpl._kind;
+
+		horseModelImpl._originalResourceBlockId = horseModelImpl._resourceBlockId;
+
+		horseModelImpl._setOriginalResourceBlockId = false;
 
 		horseModelImpl._columnBitmask = 0;
 	}
@@ -790,12 +851,16 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 			horseCacheModel.mantle = null;
 		}
 
+		horseCacheModel.photoId = getPhotoId();
+
+		horseCacheModel.resourceBlockId = getResourceBlockId();
+
 		return horseCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -823,6 +888,10 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 		sb.append(getKind());
 		sb.append(", mantle=");
 		sb.append(getMantle());
+		sb.append(", photoId=");
+		sb.append(getPhotoId());
+		sb.append(", resourceBlockId=");
+		sb.append(getResourceBlockId());
 		sb.append("}");
 
 		return sb.toString();
@@ -830,7 +899,7 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(49);
 
 		sb.append("<model><model-name>");
 		sb.append("it.dontesta.labs.liferay.elis.servicebuilder.model.Horse");
@@ -888,6 +957,14 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 			"<column><column-name>mantle</column-name><column-value><![CDATA[");
 		sb.append(getMantle());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>photoId</column-name><column-value><![CDATA[");
+		sb.append(getPhotoId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>resourceBlockId</column-name><column-value><![CDATA[");
+		sb.append(getResourceBlockId());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -921,6 +998,10 @@ public class HorseModelImpl extends BaseModelImpl<Horse> implements HorseModel {
 	private String _kind;
 	private String _originalKind;
 	private String _mantle;
+	private long _photoId;
+	private long _resourceBlockId;
+	private long _originalResourceBlockId;
+	private boolean _setOriginalResourceBlockId;
 	private long _columnBitmask;
 	private Horse _escapedModel;
 }

@@ -11,5 +11,7 @@ create table LRBO_HORSE_Horse (
 	age INTEGER,
 	gender VARCHAR(75) null,
 	kind VARCHAR(75) null,
-	mantle VARCHAR(75) null
+	mantle VARCHAR(75) null,
+	photoId LONG,
+	resourceBlockId LONG
 );

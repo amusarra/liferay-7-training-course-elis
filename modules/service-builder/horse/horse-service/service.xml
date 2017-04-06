@@ -28,11 +28,16 @@
 		<column name="gender" type="String" />
 		<column name="kind" type="String" />
 		<column name="mantle" type="String" />
+		<column name="photoId" type="long" />
 
+		<!-- Permission fields -->
+
+		<column name="resourceBlockId" type="long" />
+		
 		<!-- Order -->
 
 		<order by="asc">
-			<order-column name="name" />
+			<order-column case-sensitive="false" name="name" />
 		</order>
 
 		<!-- Finder methods -->

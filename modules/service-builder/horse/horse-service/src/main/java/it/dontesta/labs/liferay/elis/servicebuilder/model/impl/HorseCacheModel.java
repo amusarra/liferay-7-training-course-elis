@@ -65,7 +65,7 @@ public class HorseCacheModel implements CacheModel<Horse>, Externalizable {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -93,6 +93,10 @@ public class HorseCacheModel implements CacheModel<Horse>, Externalizable {
 		sb.append(kind);
 		sb.append(", mantle=");
 		sb.append(mantle);
+		sb.append(", photoId=");
+		sb.append(photoId);
+		sb.append(", resourceBlockId=");
+		sb.append(resourceBlockId);
 		sb.append("}");
 
 		return sb.toString();
@@ -165,6 +169,9 @@ public class HorseCacheModel implements CacheModel<Horse>, Externalizable {
 			horseImpl.setMantle(mantle);
 		}
 
+		horseImpl.setPhotoId(photoId);
+		horseImpl.setResourceBlockId(resourceBlockId);
+
 		horseImpl.resetOriginalValues();
 
 		return horseImpl;
@@ -190,6 +197,10 @@ public class HorseCacheModel implements CacheModel<Horse>, Externalizable {
 		gender = objectInput.readUTF();
 		kind = objectInput.readUTF();
 		mantle = objectInput.readUTF();
+
+		photoId = objectInput.readLong();
+
+		resourceBlockId = objectInput.readLong();
 	}
 
 	@Override
@@ -249,6 +260,10 @@ public class HorseCacheModel implements CacheModel<Horse>, Externalizable {
 		else {
 			objectOutput.writeUTF(mantle);
 		}
+
+		objectOutput.writeLong(photoId);
+
+		objectOutput.writeLong(resourceBlockId);
 	}
 
 	public String uuid;
@@ -264,4 +279,6 @@ public class HorseCacheModel implements CacheModel<Horse>, Externalizable {
 	public String gender;
 	public String kind;
 	public String mantle;
+	public long photoId;
+	public long resourceBlockId;
 }

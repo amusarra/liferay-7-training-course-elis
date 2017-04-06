@@ -284,6 +284,34 @@ public interface HorseModel extends BaseModel<Horse>, GroupedModel, ShardedModel
 	 */
 	public void setMantle(String mantle);
 
+	/**
+	 * Returns the photo ID of this horse.
+	 *
+	 * @return the photo ID of this horse
+	 */
+	public long getPhotoId();
+
+	/**
+	 * Sets the photo ID of this horse.
+	 *
+	 * @param photoId the photo ID of this horse
+	 */
+	public void setPhotoId(long photoId);
+
+	/**
+	 * Returns the resource block ID of this horse.
+	 *
+	 * @return the resource block ID of this horse
+	 */
+	public long getResourceBlockId();
+
+	/**
+	 * Sets the resource block ID of this horse.
+	 *
+	 * @param resourceBlockId the resource block ID of this horse
+	 */
+	public void setResourceBlockId(long resourceBlockId);
+
 	@Override
 	public boolean isNew();
 
