@@ -30,7 +30,7 @@ Per utilizzare correttamente il modulo __webservices-client__ è necessario inst
 A seguire il dettaglio della struttura di directory del folder modules:
 
 ```
-├── modules
+- modules
    ├── application-configuration
    │   └── scheduler-app
    ├── bundle-activator
@@ -39,6 +39,10 @@ A seguire il dettaglio della struttura di directory del folder modules:
    │   └── lifecycle-action
    ├── service-builder
    │   └── horse
+   │       ├── horse-api
+   │       ├── horse-client
+   │       ├── horse-service
+   │       └── horse-web
    ├── service-registry
    │   ├── horse-api
    │   ├── horse-client
