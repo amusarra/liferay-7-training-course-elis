@@ -41,21 +41,16 @@ public class HorseServiceUtil {
 	 *
 	 * Never modify this class directly. Add custom service methods to {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl} and rerun ServiceBuilder to regenerate this class.
 	 */
-
-	/**
-	* Add a new Horse
-	*
-	* @param name
-	* @param kind
-	* @param mantle
-	* @param gender
-	* @param age
-	* @return
-	*/
 	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return getService().addHorse(name, kind, mantle, gender, age);
+	}
+
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse deleteHorse(
+		long horseId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		return getService().deleteHorse(horseId);
 	}
 
 	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse getHorse(

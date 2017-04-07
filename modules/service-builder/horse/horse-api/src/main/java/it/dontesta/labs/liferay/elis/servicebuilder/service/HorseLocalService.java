@@ -39,6 +39,7 @@ import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
 
 import java.io.Serializable;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -104,18 +105,12 @@ public interface HorseLocalService extends BaseLocalService,
 	@Indexable(type = IndexableType.REINDEX)
 	public Horse addHorse(Horse horse);
 
-	/**
-	* Add a new Horse
-	*
-	* @param name
-	* @param kind
-	* @param mantle
-	* @param gender
-	* @param age
-	* @return
-	*/
 	public Horse addHorse(java.lang.String name, java.lang.String kind,
 		java.lang.String mantle, java.lang.String gender, int age);
+
+	public Horse addHorse(java.lang.String name, java.lang.String kind,
+		java.lang.String mantle, java.lang.String gender, int age,
+		Date dateOfBirth, long photoFileEntryId);
 
 	/**
 	* Creates a new horse with the primary key. Does not add the horse to the database.

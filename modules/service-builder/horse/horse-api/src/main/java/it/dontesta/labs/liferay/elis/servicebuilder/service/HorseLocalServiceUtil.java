@@ -93,20 +93,19 @@ public class HorseLocalServiceUtil {
 		return getService().addHorse(horse);
 	}
 
-	/**
-	* Add a new Horse
-	*
-	* @param name
-	* @param kind
-	* @param mantle
-	* @param gender
-	* @param age
-	* @return
-	*/
 	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return getService().addHorse(name, kind, mantle, gender, age);
+	}
+
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
+		java.lang.String name, java.lang.String kind, java.lang.String mantle,
+		java.lang.String gender, int age, java.util.Date dateOfBirth,
+		long photoFileEntryId) {
+		return getService()
+				   .addHorse(name, kind, mantle, gender, age, dateOfBirth,
+			photoFileEntryId);
 	}
 
 	/**

@@ -92,21 +92,20 @@ public class HorseLocalServiceWrapper implements HorseLocalService,
 		return _horseLocalService.addHorse(horse);
 	}
 
-	/**
-	* Add a new Horse
-	*
-	* @param name
-	* @param kind
-	* @param mantle
-	* @param gender
-	* @param age
-	* @return
-	*/
 	@Override
 	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return _horseLocalService.addHorse(name, kind, mantle, gender, age);
+	}
+
+	@Override
+	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
+		java.lang.String name, java.lang.String kind, java.lang.String mantle,
+		java.lang.String gender, int age, java.util.Date dateOfBirth,
+		long photoFileEntryId) {
+		return _horseLocalService.addHorse(name, kind, mantle, gender, age,
+			dateOfBirth, photoFileEntryId);
 	}
 
 	/**

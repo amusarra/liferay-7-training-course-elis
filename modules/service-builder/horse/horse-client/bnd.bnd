@@ -5,3 +5,9 @@ Bundle-Category: Liferay Service Builder Framework
 Bundle-Copyright: Antonio Musarra's Blog
 Bundle-Vendor: Antonio Musarra's Blog
 Bundle-DocURL: https://www.dontesta.it
+
+Export-Package:\
+	it.dontesta.labs.liferay.elis.data.loader.ModelDataLoader,\
+	org.apache.commons.csv
+
+-includeresource: @commons-csv-1.4.jar

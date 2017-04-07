@@ -3100,8 +3100,7 @@ public class HorsePersistenceImpl extends BasePersistenceImpl<Horse>
 				query.append(StringPool.CLOSE_PARENTHESIS);
 			}
 
-			query.append(
-				"EXTRACT(DAY FROM horse.createDate) - EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 0 AND EXTRACT(MONTH FROM horse.createDate) - EXTRACT(MONTH FROM CURRENT_TIMESTAMP) = 0 AND EXTRACT(YEAR FROM horse.createDate) - EXTRACT(YEAR FROM CURRENT_TIMESTAMP) = 0");
+			query.append("CURDATE() - CAST(horse.createDate AS DATE) = 0");
 
 			if (orderByComparator != null) {
 				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
@@ -3256,8 +3255,7 @@ public class HorsePersistenceImpl extends BasePersistenceImpl<Horse>
 				query.append(StringPool.CLOSE_PARENTHESIS);
 			}
 
-			query.append(
-				"EXTRACT(DAY FROM horse.createDate) - EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 0 AND EXTRACT(MONTH FROM horse.createDate) - EXTRACT(MONTH FROM CURRENT_TIMESTAMP) = 0 AND EXTRACT(YEAR FROM horse.createDate) - EXTRACT(YEAR FROM CURRENT_TIMESTAMP) = 0");
+			query.append("CURDATE() - CAST(horse.createDate AS DATE) = 0");
 
 			String sql = query.toString();
 
@@ -3287,7 +3285,7 @@ public class HorsePersistenceImpl extends BasePersistenceImpl<Horse>
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_AGEANDCURRENTCREATEDATE_AGE_2 = "horse.age = ? AND EXTRACT(DAY FROM horse.createDate) - EXTRACT(DAY FROM CURRENT_TIMESTAMP) = 0 AND EXTRACT(MONTH FROM horse.createDate) - EXTRACT(MONTH FROM CURRENT_TIMESTAMP) = 0 AND EXTRACT(YEAR FROM horse.createDate) - EXTRACT(YEAR FROM CURRENT_TIMESTAMP) = 0";
+	private static final String _FINDER_COLUMN_AGEANDCURRENTCREATEDATE_AGE_2 = "horse.age = ? AND CURDATE() - CAST(horse.createDate AS DATE) = 0";
 	private static final String _FINDER_COLUMN_AGEANDCURRENTCREATEDATE_AGE_7 = "horse.age IN (";
 	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_KIND = new FinderPath(HorseModelImpl.ENTITY_CACHE_ENABLED,
 			HorseModelImpl.FINDER_CACHE_ENABLED, HorseImpl.class,

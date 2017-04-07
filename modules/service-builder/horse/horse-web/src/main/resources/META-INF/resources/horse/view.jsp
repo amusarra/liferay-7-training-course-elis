@@ -1,4 +1,3 @@
-<%@ page import="it.dontesta.labs.liferay.elis.portlet.horse.configuration.util.HorseConfigurationValues" %>
 <%@ include file="init.jsp" %>
 
 <%
@@ -17,16 +16,18 @@
   orderByType = "asc";
  }
 
- String displayStyle = "list";
+ SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 %>
 
 <portlet:renderURL var="addHorse">
+ <portlet:param name="redirect" value="<%= currentURL %>" />
  <portlet:param name="mvcRenderCommandName" value="/horse/add"/>
 </portlet:renderURL>
 
 <portlet:renderURL var="addHorseWithPhoto">
+ <portlet:param name="redirect" value="<%= currentURL %>" />
  <portlet:param name="photo" value="true"/>
- <portlet:param name="mvcRenderCommandName" value="/horse/photo"/>
+ <portlet:param name="mvcRenderCommandName" value="/horse/add"/>
 </portlet:renderURL>
 
 
@@ -40,16 +41,16 @@
 
   <liferay-ui:search-container-row className="it.dontesta.labs.liferay.elis.servicebuilder.model.Horse" modelVar="horse" keyProperty="horseId" >
    <portlet:renderURL var="rowURL">
-    <portlet:param name="backURL" value="<%=currentURL %>" />
-    <portlet:param name="horseId" value="${horse.horseId}" />
+    <portlet:param name="redirect" value="<%= currentURL %>" />
+    <portlet:param name="<%=HorseWebKeys.HORSE_ENTRY_ID%>" value="${horse.horseId}" />
     <portlet:param name="mvcRenderCommandName" value="/horse/view_entry"/>
    </portlet:renderURL>
-   <liferay-ui:search-container-column-text property="name" name="horse-name" orderable="true" orderableProperty="name" href="${rowURL}"/>
-   <liferay-ui:search-container-column-text property="kind" name="horse-kind" orderable="true" orderableProperty="kind"/>
+   <liferay-ui:search-container-column-text property="name" name="horse-name" orderable="false" orderableProperty="name" href="${rowURL}"/>
+   <liferay-ui:search-container-column-text property="kind" name="horse-kind" orderable="false" orderableProperty="kind"/>
    <liferay-ui:search-container-column-text property="age" name="horse-age" />
    <liferay-ui:search-container-column-text property="mantle" name="horse-mantle"/>
    <liferay-ui:search-container-column-text property="gender" name="horse-gender"/>
-   <liferay-ui:search-container-column-date property="dateOfBirth" name="date-of-birth"/>
+   <liferay-ui:search-container-column-text name="date-of-birth" value='<%=(Validator.isNotNull(horse.getDateOfBirth())) ? sdf.format(horse.getDateOfBirth()): ""%>'/>
    <liferay-ui:search-container-column-jsp align="right"
            path="/horse/entry_action.jsp"
    />

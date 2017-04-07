@@ -10,6 +10,7 @@
 <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
 <%@ page import="javax.portlet.PortletURL" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <%@ page import="com.liferay.portal.kernel.language.LanguageUtil"%>
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
@@ -17,9 +18,11 @@
 <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
 <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
 <%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %>
+<%@ page import="com.liferay.portal.kernel.util.Validator" %>
 
 <%@ page import="it.dontesta.labs.liferay.elis.servicebuilder.model.Horse" %>
 <%@ page import="it.dontesta.labs.liferay.elis.portlet.horse.constants.HorseWebKeys" %>
+<%@ page import="it.dontesta.labs.liferay.elis.portlet.horse.configuration.util.HorseConfigurationValues" %>
 <%@ page import="it.dontesta.labs.liferay.elis.servicebuilder.service.HorseLocalServiceUtil" %>
 
 <liferay-frontend:defineObjects />

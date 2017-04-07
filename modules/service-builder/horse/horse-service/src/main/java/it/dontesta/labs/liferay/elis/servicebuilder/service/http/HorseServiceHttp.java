@@ -167,12 +167,43 @@ public class HorseServiceHttp {
 		}
 	}
 
+	public static it.dontesta.labs.liferay.elis.servicebuilder.model.Horse deleteHorse(
+		HttpPrincipal httpPrincipal, long horseId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		try {
+			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
+					"deleteHorse", _deleteHorseParameterTypes4);
+
+			MethodHandler methodHandler = new MethodHandler(methodKey, horseId);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception e) {
+				if (e instanceof com.liferay.portal.kernel.exception.PortalException) {
+					throw (com.liferay.portal.kernel.exception.PortalException)e;
+				}
+
+				throw new com.liferay.portal.kernel.exception.SystemException(e);
+			}
+
+			return (it.dontesta.labs.liferay.elis.servicebuilder.model.Horse)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException se) {
+			_log.error(se, se);
+
+			throw se;
+		}
+	}
+
 	public static java.util.List<it.dontesta.labs.liferay.elis.servicebuilder.model.Horse> getCurrentHorseByeAge(
 		HttpPrincipal httpPrincipal, int age) {
 		try {
 			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
 					"getCurrentHorseByeAge",
-					_getCurrentHorseByeAgeParameterTypes4);
+					_getCurrentHorseByeAgeParameterTypes5);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, age);
 
@@ -198,7 +229,7 @@ public class HorseServiceHttp {
 		HttpPrincipal httpPrincipal, java.lang.String kind) {
 		try {
 			MethodKey methodKey = new MethodKey(HorseServiceUtil.class,
-					"getHorsesByKind", _getHorsesByKindParameterTypes5);
+					"getHorsesByKind", _getHorsesByKindParameterTypes6);
 
 			MethodHandler methodHandler = new MethodHandler(methodKey, kind);
 
@@ -232,10 +263,13 @@ public class HorseServiceHttp {
 			java.lang.String.class, java.lang.String.class,
 			java.lang.String.class, java.lang.String.class, int.class
 		};
-	private static final Class<?>[] _getCurrentHorseByeAgeParameterTypes4 = new Class[] {
+	private static final Class<?>[] _deleteHorseParameterTypes4 = new Class[] {
+			long.class
+		};
+	private static final Class<?>[] _getCurrentHorseByeAgeParameterTypes5 = new Class[] {
 			int.class
 		};
-	private static final Class<?>[] _getHorsesByKindParameterTypes5 = new Class[] {
+	private static final Class<?>[] _getHorsesByKindParameterTypes6 = new Class[] {
 			java.lang.String.class
 		};
 }

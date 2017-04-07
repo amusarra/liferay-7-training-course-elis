@@ -55,19 +55,10 @@ public interface HorseService extends BaseService {
 	 *
 	 * Never modify or reference this interface directly. Always use {@link HorseServiceUtil} to access the horse remote service. Add custom service methods to {@link it.dontesta.labs.liferay.elis.servicebuilder.service.impl.HorseServiceImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
-
-	/**
-	* Add a new Horse
-	*
-	* @param name
-	* @param kind
-	* @param mantle
-	* @param gender
-	* @param age
-	* @return
-	*/
 	public Horse addHorse(java.lang.String name, java.lang.String kind,
 		java.lang.String mantle, java.lang.String gender, int age);
+
+	public Horse deleteHorse(long horseId) throws PortalException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Horse getHorse(long horseId) throws NoSuchHorseException;

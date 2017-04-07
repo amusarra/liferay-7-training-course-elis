@@ -15,19 +15,19 @@
 
 	<portlet:renderURL var="editEntryURL">
 		<portlet:param name="redirect" value="<%= currentURL %>" />
-		<portlet:param name="horseEntryId" value="<%= String.valueOf(horseEntry.getHorseId()) %>" />
+		<portlet:param name="<%=HorseWebKeys.HORSE_ENTRY_ID%>" value="<%= String.valueOf(horseEntry.getHorseId()) %>" />
 		<portlet:param name="mvcRenderCommandName" value="/horse/edit"/>
 	</portlet:renderURL>
 
 	<portlet:renderURL var="photoEntryURL" windowState="<%=LiferayWindowState.EXCLUSIVE.toString()%>">
 		<portlet:param name="redirect" value="<%= currentURL %>" />
-		<portlet:param name="horseEntryId" value="<%= String.valueOf(horseEntry.getHorseId()) %>" />
+		<portlet:param name="<%=HorseWebKeys.HORSE_ENTRY_ID%>" value="<%= String.valueOf(horseEntry.getHorseId()) %>" />
 		<portlet:param name="mvcRenderCommandName" value="/horse/photo"/>
 	</portlet:renderURL>
 
 	<portlet:actionURL name="/horse/delete" var="deleteEntryURL">
 		<portlet:param name="redirect" value="<%= currentURL %>" />
-		<portlet:param name="horseEntryId" value="<%= String.valueOf(horseEntry.getHorseId()) %>" />
+		<portlet:param name="<%=HorseWebKeys.HORSE_ENTRY_ID%>" value="<%= String.valueOf(horseEntry.getHorseId()) %>" />
 	</portlet:actionURL>
 
 	<liferay-ui:icon

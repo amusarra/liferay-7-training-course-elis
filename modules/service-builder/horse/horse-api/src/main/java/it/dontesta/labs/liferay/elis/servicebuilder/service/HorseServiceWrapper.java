@@ -32,21 +32,18 @@ public class HorseServiceWrapper implements HorseService,
 		_horseService = horseService;
 	}
 
-	/**
-	* Add a new Horse
-	*
-	* @param name
-	* @param kind
-	* @param mantle
-	* @param gender
-	* @param age
-	* @return
-	*/
 	@Override
 	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse addHorse(
 		java.lang.String name, java.lang.String kind, java.lang.String mantle,
 		java.lang.String gender, int age) {
 		return _horseService.addHorse(name, kind, mantle, gender, age);
+	}
+
+	@Override
+	public it.dontesta.labs.liferay.elis.servicebuilder.model.Horse deleteHorse(
+		long horseId)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		return _horseService.deleteHorse(horseId);
 	}
 
 	@Override

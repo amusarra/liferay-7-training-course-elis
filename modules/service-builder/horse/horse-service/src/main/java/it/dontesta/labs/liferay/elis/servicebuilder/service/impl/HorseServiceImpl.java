@@ -14,12 +14,13 @@
 
 package it.dontesta.labs.liferay.elis.servicebuilder.service.impl;
 
-import java.util.List;
-
 import aQute.bnd.annotation.ProviderType;
+import com.liferay.portal.kernel.exception.PortalException;
 import it.dontesta.labs.liferay.elis.servicebuilder.exception.NoSuchHorseException;
 import it.dontesta.labs.liferay.elis.servicebuilder.model.Horse;
 import it.dontesta.labs.liferay.elis.servicebuilder.service.base.HorseServiceBaseImpl;
+
+import java.util.List;
 
 /**
  * The implementation of the horse remote service. <p> All custom service
@@ -43,6 +44,9 @@ public class HorseServiceImpl extends HorseServiceBaseImpl {
 	 * it.dontesta.labs.liferay.elis.servicebuilder.service.HorseServiceUtil} to
 	 * access the horse remote service.
 	 */
+
+	//TODO Add Security check via Permission Checker
+
 	@Override
 	public List<Horse> getHorses() {
 
@@ -62,21 +66,16 @@ public class HorseServiceImpl extends HorseServiceBaseImpl {
 		return getHorsePersistence().findByName(name);
 	}
 
-	/**
-	 * Add a new Horse
-	 *
-	 * @param name
-	 * @param kind
-	 * @param mantle
-	 * @param gender
-	 * @param age
-	 * @return
-	 */
 	@Override
 	public Horse addHorse(
 		String name, String kind, String mantle, String gender, int age) {
 
 		return horseLocalService.addHorse(name, kind, mantle, gender, age);
+	}
+
+	@Override
+	public Horse deleteHorse(long horseId) throws PortalException {
+		return  horseLocalService.deleteHorse(horseId);
 	}
 
 	@Override
